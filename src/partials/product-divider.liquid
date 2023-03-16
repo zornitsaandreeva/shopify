@@ -1,0 +1,16 @@
+{%- liquid
+  capture block_style
+    echo 'style="'
+    echo '--block-padding-top:' | append: block.settings.padding_top | append: 'px;'
+    echo '--block-padding-bottom:' | append: block.settings.padding_bottom | append: 'px;'
+    echo '"'
+  endcapture
+-%}
+
+<div class="product__block product__block--divider" {{ block_style }} {{ block.shopify_attributes }}>
+  {%- if block.settings.show_line -%}
+    <hr class="divider">
+  {%- else -%}
+    &nbsp;
+  {%- endif -%}
+</div>

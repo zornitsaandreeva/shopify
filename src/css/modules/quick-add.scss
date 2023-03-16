@@ -1,0 +1,204 @@
+/**
+ * Quick add
+ */
+
+.quick-add__holder {
+  --btn-text: var(--primary);
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  opacity: 0;
+  width: 100%;
+  background: var(--TRANSPARENT);
+  border-top: none;
+  text-align: center;
+  pointer-events: auto;
+  animation: slideOutDown 0.25s ease;
+}
+.no-js .quick-add__holder { display: none; }
+
+.supports-touch .quick-add__holder {
+  animation: slideInUp 0.25s ease;
+  animation-fill-mode: forwards;
+}
+
+.no-touch .product-item__image:hover,
+.no-touch .product-item--overlay-text:hover {
+  .quick-add__holder:not(.is-disabled) {
+    animation: slideInUp 0.25s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .quick-add__button { visibility: visible; }
+}
+
+.no-touch .is-focused .product-item__image:focus-within .quick-add__button { visibility: visible; }
+
+.quick-add__holder.is-visible,
+.quick-add__holder.has-error,
+body.is-focused .quick-add__holder:focus-within {
+  animation: slideInUp 0.25s ease;
+  animation-fill-mode: forwards;
+}
+
+.quick-add__holder.is-disabled {
+  animation: slideOutDown 0.25s ease;
+  pointer-events: none;
+}
+.quick-add__holder.is-disabled .quick-add__button { visibility: hidden; }
+
+.quick-add__button {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: var(--COLOR-TEXT);
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+  visibility: hidden;
+  transition: visibility 0.5s;
+
+  &.is-visible,
+  &.is-loading,
+  &.is-added { visibility: visible; }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: var(--COLOR-BG);
+    opacity: 0.7;
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+  }
+
+  &.is-disabled { pointer-events: none; }
+
+  @include media-query($small) {
+    display: none;
+  }
+}
+
+.quick-add__button > span { pointer-events: none; }
+
+.has-error > .quick-add__button {
+  @include media-query($medium-down) {
+    visibility: visible;
+    display: block;
+    max-height: none;
+    padding: 15px;
+    opacity: 1;
+  }
+}
+
+.quick-add__button-mobile {
+  --btn-size: 36px;
+  --btn-offset: 5px;
+  position: absolute;
+  bottom: var(--btn-offset);
+  left: var(--btn-offset);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  // Always use global colors here
+  color: var(--COLOR-TEXT);
+  background: var(--COLOR-BG);
+  pointer-events: auto;
+  font-size: 0;
+  z-index: 1;
+
+  // Make clickable are bigger
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(var(--btn-offset) * -1);
+    left: calc(var(--btn-offset) * -1);
+    width: calc(var(--btn-size) + var(--btn-offset) * 2);
+    height: calc(var(--btn-size) + var(--btn-offset) * 2);
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+.no-touch .quick-add__button-mobile {
+  @include media-query($medium-up) { display: none; }
+}
+
+// Never show that button on touch devices except the error state message
+.supports-touch .quick-add__button { display: none; }
+.supports-touch .quick-add__button.has-error {
+  display: block;
+  animation: slideToggle 3s ease;
+  animation-fill-mode: forwards;
+}
+
+.quick-add__button-mobile .btn__plus {
+  color: var(--primary);
+}
+
+.quick-add__button-mobile.has-error .btn__plus {
+  opacity: unset;
+  visibility: unset;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideToggle {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

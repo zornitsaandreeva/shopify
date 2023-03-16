@@ -1,0 +1,179 @@
+/**
+ * Home Slideshow
+ */
+
+
+.slideshow {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  transition: min-height 0.5s linear;
+
+  .flickity-viewport { min-height: inherit; }
+
+  .flickity-enabled {
+    min-height: inherit;
+    height: 100%;
+  }
+  .flickity-enabled.is-loading .flickity-viewport { transition: none; }
+
+  .flickity-prev-next-button.previous { left: calc(var(--btn-size) / 2); }
+
+  .flickity-prev-next-button.next { right: calc(var(--btn-size) / 2); }
+
+  .slideshow__slide {
+    width: 100%;
+    color: var(--text);
+  }
+
+  .slideshow__slide--onboarding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slideshow__slide--onboarding .image-overlay {
+    z-index: -1;
+    opacity: 1;
+  }
+
+  .flickity-page-dots {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    @include media-query($medium-down) {
+      padding-bottom: 10px;
+    }
+  }
+
+  .hero__content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    @include media-query($medium-down) {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .hero__content--transparent {
+    padding: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include media-query($medium) {
+      padding: 45px;
+    }
+
+    @include media-query($small) {
+      padding: 30px;
+    }
+  }
+
+}
+
+/* Zoom out animation */
+.slideshow__slider--zoom-out .image__fill > img {
+  will-change: opacity, transform;
+  transform: scale(1.2);
+  transition: transform 2s $ease-out-fast;
+}
+
+.no-js .slideshow__slider--zoom-out .image__fill > img,
+.slideshow__slider--zoom-out .is-selected .image__fill > img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Wipe animation */
+.slideshow__slider--wipe .slideshow__slide { transition: opacity 0.8s ease-in; }
+
+.slideshow__slider--wipe.is-loading .slideshow__slide,
+.slideshow__slider--wipe .slideshow__slide.is-selected,
+.no-js .slideshow__slider--wipe .slideshow__slide {
+  transition: none;
+}
+
+.no-js .slideshow__slider--wipe .hero__image,
+.slideshow__slider--wipe .is-selected .hero__image {
+  animation: clipPathFromRight 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes clipPathFromRight {
+  0% {
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+    transform: translateX(2%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateX(0);
+  }
+}
+
+/* Slide styles */
+.slideshow__slide {
+  & > a {
+    display: block;
+    min-height: 100%;
+    height: 100%;
+    color: inherit;
+  }
+
+  .image__hero__frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-query($small) {
+    .align--top-left,
+    .align--top-center,
+    .align--top-right,
+    .align--bottom-left,
+    .align--bottom-center,
+    .align--bottom-right { align-items: center; }
+  }
+}
+
+@include media-query($medium-up) {
+  .image-height .slideshow__slide .hero__content__wrapper { position: absolute; }
+  .image-height .slideshow__slide .hero__image { position: relative; }
+  .image-height .slideshow__slide .image__hero__frame {
+    position: relative;
+    height: 0;
+    min-height: inherit;
+  }
+}
+
+@include media-query($small) {
+  .image-height--mobile .slideshow__slide .hero__content__wrapper { position: absolute; }
+  .image-height--mobile .slideshow__slide .hero__image { position: relative; }
+  .image-height--mobile .slideshow__slide .image__hero__frame {
+    position: relative;
+    height: 0;
+    min-height: inherit;
+  }
+}
+
+/*
+  Prevent CLS on page load
+  Images are stacked until flickity is initialized which causes CLS
+  Position absolute makes them stay unchanged (if only JS is enabled)
+*/
+.js .slideshow__slider:not(.flickity-enabled) .slideshow__slide:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}

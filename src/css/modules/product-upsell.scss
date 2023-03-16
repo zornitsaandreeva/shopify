@@ -1,0 +1,228 @@
+/*====== Product Upsell ======*/
+
+:root {
+  --btn-text-width: 0px;
+}
+
+.product-upsell__holder__title { margin-top: 0; }
+
+.product-upsell {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: var(--bg-accent);
+}
+
+.product-upsell__image { width: 120px; }
+.product-upsell__image__link {
+  display: block;
+  height: 100%;
+}
+
+.product-upsell__image__thumb {
+  overflow: hidden;
+  position: relative;
+  padding-top: var(--PRODUCT-GRID-ASPECT-RATIO);
+  min-height: 100%;
+  filter: brightness(var(--filter-bg));
+}
+
+.product-upsell__image__thumb .image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.product-upsell__content {
+  --inner: 16px;
+  width: calc(100% - 120px);
+  padding: var(--inner) 60px var(--inner) var(--inner);
+  @include media-query($large-up) {
+    --inner: 24px;
+  }
+}
+
+.product-upsell__title {
+  @include body;
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  margin-top: 0;
+}
+
+.product-upsell__variant-title {
+  @include body;
+  font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY));
+  color: var(--text-light);
+}
+
+.product-upsell__variant-title span {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background-color: currentColor;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+.product-upsell__price {
+  @include body;
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+}
+
+.product-upsell__price .unit {
+  @include body;
+  display: block;
+  margin-top: 5px;
+  color: var(--text-light);
+}
+
+.product-upsell__btn {
+  --btn-size: 32px;
+  --btn-text: var(--primary);
+  --btn-icon-offset: 4px;
+  --btn-text-padding: 6px;
+  --text-size: calc(0.8rem * var(--FONT-ADJUST-BODY));
+  overflow: hidden;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--btn-size);
+  min-height: var(--btn-size);
+  padding: 0 10px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: calc(1rem * var(--FONT-ADJUST-BODY));
+  line-height: 32px;
+  color: var(--primary);
+  background: var(--bg);
+  text-align: center;
+
+  @include media-query($mobile) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 10px 0 0;
+  }
+
+  .no-js & { display: none; } // Hide button when JS is disabled
+}
+
+// Visually hidden cloned button text is required to take its dimensions by JS
+.product-upsell__btn .btn__text-cloned {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--text-size);
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.product-upsell__btn .btn__text {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  font-size: var(--text-size);
+  text-align: right;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, width 0.3s ease, visibility 0.3s;
+}
+
+.product-upsell__btn.is-loading,
+.product-upsell__btn.is-added {
+  width: var(--btn-size);
+  .btn__text { opacity: 0; }
+}
+
+.product-upsell__btn .btn__plus {
+  --icon-size: 20px;
+  position: relative;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0 calc(var(--btn-icon-offset) * -1);
+}
+
+.product-upsell__btn .icon-plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  fill: currentColor;
+  transform: translate(-50%, -50%);
+}
+
+.product-upsell__btn.is-loading { pointer-events: none; }
+
+@media (hover: hover) {
+  .product-upsell__btn:hover .btn__text {
+    width: calc(var(--btn-text-width) + var(--btn-text-padding) + var(--btn-icon-offset));
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .no-js .product-upsell__btn:hover .btn__text { 
+    width: auto; 
+    padding-left: calc(var(--btn-text-padding) + var(--btn-icon-offset));
+  }
+
+  .product-upsell__btn.is-added:hover,
+  .product-upsell__btn.is-loading:hover { min-width: var(--btn-size); }
+
+  .product-upsell__btn.is-added:hover .btn__text,
+  .product-upsell__btn.is-loading:hover .btn__text {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.product-upsell__out-of-stock {
+  display: none;
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  color: var(--sale-text-secondary);
+}
+
+.product-upsell__btn.is-hidden { display: none; }
+
+.product-upsell__btn.is-hidden ~ .product-upsell__out-of-stock { display: block; }
+
+.product-upsell__errors {
+  overflow: hidden;
+  position: relative;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease, max-height .5s cubic-bezier(0, 0.75, 0.25, 1), visibility .5s;
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+
+  &.is-visible {
+    visibility: visible;
+    max-height: 300px;
+    opacity: 1;
+    transition-timing-function: cubic-bezier(0.5, 0.25, 0.75, 1);
+  }
+
+  .errors {
+    position: relative;
+    padding: 10px 30px 10px 10px;
+    margin: 10px 0;
+    border: 1px solid var(--COLOR-ERROR-BORDER);
+    border-radius: var(--RADIUS);
+    background-color: var(--COLOR-ERROR-BG);
+    color: var(--COLOR-ERROR);
+  }
+}
+
+// Show only first upsell product
+quick-add-product + quick-add-product { display: none; }

@@ -1,0 +1,172 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-center",
+        "width": "wrapper",
+        "bg_color": "#f7f7f7",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "0606c0b4-f25e-4e38-a374-4acbaf45b007": {
+      "type": "section-double",
+      "blocks": {
+        "template--14574156841024__0606c0b4-f25e-4e38-a374-4acbaf45b007-1674684267e8640c6d-0": {
+          "type": "heading",
+          "settings": {
+            "title": "We're here to help with sizing, styling and anything else",
+            "text_size": 8
+          }
+        },
+        "template--14574156841024__0606c0b4-f25e-4e38-a374-4acbaf45b007-1674684267e8640c6d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>3 Year Warranty <strong>|<\/strong> Extended 90 Day Returns <strong>|<\/strong> Expedited Shipping<\/p>",
+            "text_size": 2,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156841024__0606c0b4-f25e-4e38-a374-4acbaf45b007-1674684267e8640c6d-0",
+        "template--14574156841024__0606c0b4-f25e-4e38-a374-4acbaf45b007-1674684267e8640c6d-1"
+      ],
+      "settings": {
+        "layout": "",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/flux-white-necklaces-alohas-905865_3237188c-c88a-40ca-9119-61291ee728c3.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "contact": {
+      "type": "contact-form",
+      "blocks": {
+        "Name": {
+          "type": "text",
+          "settings": {
+            "title": "Full Name",
+            "required": false
+          }
+        },
+        "Email": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "required": true
+          }
+        },
+        "Options-select": {
+          "type": "select",
+          "settings": {
+            "title": "Select an option",
+            "label-one": "- Pick an option -",
+            "label-two": "Option one",
+            "label-three": "Option two",
+            "label-four": "Option three",
+            "label-five": "Option four",
+            "label-six": "Option five"
+          }
+        },
+        "Message": {
+          "type": "body",
+          "settings": {
+            "title": "Message",
+            "required": true
+          }
+        },
+        "Urgent-checkbox": {
+          "type": "checkbox",
+          "settings": {
+            "title": "Yes, I would like to opt-in to receive Marketing newsletters",
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "Name",
+        "Email",
+        "Options-select",
+        "Message",
+        "Urgent-checkbox"
+      ],
+      "settings": {
+        "title": "Get in touch",
+        "terms": true,
+        "width": "wrapper--narrow",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "faq": {
+      "type": "page-faq",
+      "blocks": {
+        "heading-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Common Questions"
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "How long will shipping take?",
+            "content": "<p>All orders are shipped within 12-36 hours from our warehouse in Bellingham WA.  Delivery times will depend on your shipping option but all orders are tracked from our facility to your door.  <\/p>"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "Can I return my product?",
+            "content": "<p>We always aim for make sure our customers love our products, but if you do need to return an order, we’re happy to help. Just email us directly and we’ll take you through the process.<\/p>"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "Can I try your products in a store?",
+            "content": "<p>Not yet, but we are working on it!  Sign up in our email newsletter in the footer to receive updates on when and where you can buy our products locally.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading-0",
+        "question-1",
+        "question-2",
+        "question-3"
+      ],
+      "settings": {
+        "width": "wrapper--narrow",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "border_color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0606c0b4-f25e-4e38-a374-4acbaf45b007",
+    "contact",
+    "faq"
+  ]
+}

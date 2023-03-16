@@ -1,0 +1,42 @@
+/* ================ Heights ================ */
+
+:root {
+  --full-screen: 100vh;
+  --three-quarters: 75vh;
+  --two-thirds: 66vh;
+  --one-half: 50vh;
+  --one-third: 33vh;
+
+  --header-height: 100px;
+  --footer-height: 500px;
+  --announcmenet-height: 33px;
+  --content-full: 90vh;
+  --content-min: 90vh;
+  --header-padding: 0px;
+}
+
+.screen-height-full { min-height: var(--full-screen); }
+.screen-height-three-quarters { min-height: var(--three-quarters); }
+.screen-height-two-thirds { min-height: var(--two-thirds); }
+.screen-height-one-half { min-height: var(--one-half); }
+.screen-height-one-third { min-height: var(--one-third); }
+.seven-fifty-height-hero { min-height: 750px; }
+.sixty-fifty-height-hero { min-height: 650px; }
+.five-fifty-height-hero { min-height: 550px; }
+.four-fifty-height-hero { min-height: 450px; }
+.three-fifty-height-hero { min-height: 350px; }
+.two-fifty-height-hero { min-height: 250px; }
+
+@include media-query($small) {
+  .screen-height-full--mobile { min-height: var(--full-screen); }
+  .screen-height-three-quarters--mobile { min-height: var(--three-quarters); }
+  .screen-height-two-thirds--mobile { min-height: var(--two-thirds); }
+  .screen-height-one-half--mobile { min-height: var(--one-half); }
+  .screen-height-one-third--mobile { min-height: var(--one-third); }
+  .seven-fifty-height-hero--mobile { min-height: 750px; }
+  .sixty-fifty-height-hero--mobile { min-height: 650px; }
+  .five-fifty-height-hero--mobile { min-height: 550px; }
+  .four-fifty-height-hero--mobile { min-height: 450px; }
+  .three-fifty-height-hero--mobile { min-height: 350px; }
+  .two-fifty-height-hero--mobile { min-height: 250px; }
+}

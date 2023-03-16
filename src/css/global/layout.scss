@@ -1,0 +1,204 @@
+/**
+ * Layout
+ */
+
+:root {
+  --outer: var(--LAYOUT-OUTER);
+  --gutter: var(--LAYOUT-GUTTER);
+  --gap: var(--gutter);
+  --outer-offset: calc(var(--outer) * -1);
+  --gutter-offset: calc(var(--gutter) * -1);
+  --inner: 20px;
+  --base: 16px;
+  --line: 1rem;
+  --content-max: 1100px;
+  --grid: repeat(4, minmax(0, 1fr));
+  --grid-tablet: repeat(3, minmax(0, 1fr));
+  --grid-small: repeat(2, minmax(0, 1fr));
+  --grid-mobile: repeat(1, minmax(0, 1fr));
+  --sidebar-width: var(--SIDEBAR-WIDTH);
+
+  @include media-query($medium) {
+    --outer: calc(var(--LAYOUT-OUTER-MEDIUM));
+    --gutter: calc(var(--LAYOUT-GUTTER-MEDIUM));
+    --inner: 18px;
+    --base: 15px;
+    --sidebar-width: var(--SIDEBAR-WIDTH-MEDIUM);
+  }
+
+  @include media-query($small) {
+    --outer: calc(var(--LAYOUT-OUTER-SMALL));
+    --gutter: calc(var(--LAYOUT-GUTTER-SMALL));
+    --inner: 16px;
+    --base: 14px;
+    --line: 0.66rem;
+  }
+
+  @include media-query($widescreen) {
+    --content-max: 80vw;
+  }
+}
+
+html,
+body { min-height: 100%; }
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--base);
+  scroll-behavior: smooth;
+  // needed for anchor click polyfill
+  --scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  color: var(--COLOR-TEXT);
+  background-color: var(--COLOR-BG);
+  font-size: var(--FONT-SIZE-BASE);
+  -webkit-text-size-adjust: 100%;
+
+  * { -webkit-font-smoothing: antialiased; }
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--COLOR-BG);
+}
+
+/**
+ * CONTENT WRAPPER
+ */
+.main-content {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  display: block;
+  min-height: var(--content-min);
+}
+
+.wrapper {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--outer);
+  padding-right: var(--outer);
+}
+
+.wrapper--narrow {
+  max-width: 670px;
+  margin: 0 auto;
+  padding-left: var(--outer);
+  padding-right: var(--outer);
+}
+
+.wrapper--full-padded {
+  max-width: none;
+  margin: 0 auto;
+  padding-left: var(--outer);
+  padding-right: var(--outer);
+}
+
+.wrapper--full {
+  max-width: none;
+  margin: 0 auto;
+}
+
+.section-padding {
+  --padding-top: var(--PT);
+  --padding-bottom: var(--PB);
+
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+
+  @include media-query($medium) {
+    --padding-top: calc(var(--PT) * 0.8);
+    --padding-bottom: calc(var(--PB) * 0.8);
+  }
+
+  @include media-query($small) {
+    --padding-top: calc(var(--PT) * 0.6);
+    --padding-bottom: calc(var(--PB) * 0.6);
+
+    padding-top: var(--PT-MOBILE, var(--padding-top)); // Set min top padding on mobile if there's content
+  }
+}
+
+/**
+ * TABLES
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid var(--COLOR-BORDER);
+  margin: 1em 0;
+}
+
+table tr > th,
+table tr > td {
+  border-bottom: 1px solid var(--COLOR-BORDER);
+  border-right: 1px solid var(--COLOR-BORDER);
+  padding: 10px;
+  line-height: 1.3;
+  vertical-align: middle;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+dl { margin-bottom: 1.5em; }
+
+dt,
+dd { line-height: 1.5em; }
+
+dt { font-weight: var(--FONT-WEIGHT-BODY-BOLD); }
+
+dd { margin-left: 0.8em; }
+
+// Used for inline-block grids
+.just {
+  text-align: justify;
+  font-size: 0.01em;
+}
+
+.product-grid.just { font-size: 0.001px; }
+
+.just > * {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+
+  // RESET AFTER INLINE_BLOCK GRID
+  font-size: var(--FONT-SIZE-BASE);
+}
+
+.just:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
+
+
+// Backdrop linear gradient used for header underlay to improve text visibility
+.main-content > .shopify-section:first-of-type .backdrop--linear:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: calc(var(--header-height) * 1.5);
+  background: linear-gradient(to bottom, var(--header-overlay-color) 0%, var(--TRANSPARENT) 100%);
+  opacity: var(--header-overlay-opacity);
+}

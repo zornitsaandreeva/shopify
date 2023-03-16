@@ -1,0 +1,55 @@
+.header__mobile__hamburger {
+  position: relative;
+  width: 30px;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  margin-left: -5px;
+  margin-right: 16px;
+  cursor: pointer;
+  
+  @include media-query($medium-up) {
+    margin-right: 22px;
+  }
+}
+
+.header__mobile__hamburger.navlink {
+  @include media-query($medium-up) {
+    width: auto;
+  }
+
+  @include media-query($small) {
+    display: block;
+    margin-right: 16px;
+  }
+}
+
+.header__mobile__hamburger .icon {
+  --icon-size: 24px;
+  stroke: currentColor;
+}
+
+.header__mobile__hamburger .icon-cancel {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+
+// Hide texts in favor of icons on mobile if Icons style is set to "Text"
+.header__mobile__button .navlink__cart__content > .navtext {
+  @include media-query ($small) {
+    display: none;
+  }
+}
+
+// Hide icons on desktop if Icons style is set to "Text"
+.header__desktop__button .navlink--toplevel .icon,
+.header__mobile__button .navlink--toplevel .icon {
+  @include media-query ($medium-up) {
+    display: none;
+  }
+}

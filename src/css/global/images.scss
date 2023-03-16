@@ -1,0 +1,217 @@
+// ========== Images ==========
+
+.lazy-image { display: block; }
+.lazy-image--backfill.is-loading {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-accent);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -30%;
+    right: -30%;
+    bottom: -40%;
+    animation-duration: 2.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: linear-gradient(to right, transparent 16%, var(--COLOR-BG) 32%, transparent 48%);
+    transform: translateX(-100%) rotate(32deg);
+  }
+}
+
+.no-js .lazy-image--backfill.is-loading:after { content: none; }
+.no-js .lazy-image img.is-loading { opacity: 1; }
+
+// Needs a bit larger element in order to prevent the gradient being cut off during the rotation
+.image__hero__scale.lazy-image--backfill.is-loading:after {
+  top: -60%;
+  left: -60%;
+  right: -60%;
+  bottom: -60%;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(32deg); }
+  100% { transform: translateX(100%) rotate(8deg); }
+}
+
+// Use this background color as an image placeholder for the time being
+.lazy-image img {
+  transition: opacity 1s ease;
+  backface-visibility: hidden;
+}
+.lazy-image img.is-loading { opacity: 0; }
+
+/* === snippets/image-hero.liquid === */
+.image__fill {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+  }
+}
+
+/* === snippets/image.liquid === */
+.image-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: calc(1 / var(--aspect-ratio) * 100%);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: auto;
+  }
+}
+
+.image-wrapper--cover {
+  height: 100%;
+  padding-top: 0;
+
+  img { object-fit: cover; }
+}
+
+img.fit-cover { object-fit: cover; }
+
+/* === snippets/hero.liquid === */
+.image__hero__frame {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.image__hero__frame.image-height {
+  @include media-query($medium-up) {
+    padding-top: calc(1 / var(--aspect-ratio) * 100%);
+  }
+}
+
+.image__hero__frame.image-height--mobile {
+  @include media-query($small) {
+    padding-top: calc(1 / var(--aspect-ratio) * 100%);
+  }
+}
+
+.image__hero__pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+.image__hero__scale {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+// Parallax
+[data-parallax-wrapper] .image__hero__pane {
+  display: flex;
+  align-items: center;
+}
+
+[data-parallax-wrapper] .image__hero__scale {
+  min-height: var(--PARALLAX-STRENGTH-MIN);
+  max-height: var(--PARALLAX-STRENGTH-MAX);
+}
+
+/* == Link that fills a position: relative image wrapper == */
+.link-over-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  .image-wrapper {
+    transition: transform 2s $ease-out-fast;
+    transform: scale(1);
+  }
+
+  &:hover .image-wrapper { transform: scale(1.06); }
+}
+
+.image-overlay-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0.5;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.3) 100%);
+}
+
+/* === image load animations === */
+.fade-in-image .image__hero__scale > img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.no-js .fade-in-image .image__hero__scale > img,
+.fade-in-image .image__hero__scale > img.is-loaded { opacity: 1; }
+
+.fade-in-image-zoom .image__hero__scale > img {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.65s $ease-out-fast, transform 2s $ease-out-fast;
+}
+
+.no-js .fade-in-image-zoom .image__hero__scale > img,
+.fade-in-image-zoom .image__hero__scale > img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.no-js {
+  .image__hero__scale { padding-top: 0 !important; }
+
+  .fade-in-image .image__hero__scale > img { opacity: 1; }
+  .fade-in-image-zoom .image__hero__scale > img {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// Inline image used on Text with products section
+.inline-image {
+  --image-width: 200px;
+
+  display: inline-block;
+  width: var(--image-width);
+  margin: 2px 0;
+  vertical-align: middle;
+}
+
+.inline-image__inner { overflow: hidden; }
+
+.inline-image__image { transition: transform 2s $ease-out-fast; }
+.inline-image__link:hover .inline-image__image { transform: scale(1.08); }

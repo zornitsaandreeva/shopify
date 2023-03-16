@@ -1,0 +1,13 @@
+<section class="page">
+  <h2 class="page__heading">{{ 'general.404.title' | t }}</h2>
+  <p class="center text--404">{{ 'general.404.subtext_html' | t }}</p>
+
+  [% render 'partials/search-form' %]
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "templates": ["404"]
+}
+{% endschema %}

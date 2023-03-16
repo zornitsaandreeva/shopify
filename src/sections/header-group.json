@@ -1,0 +1,26 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "icon_family": "modern",
+        "header_style": "logo_beside"
+      }
+    },
+    "announcement": {
+      "type": "announcement",
+      "settings": {
+        "bg_color": "#f7f7f7",
+        "color": "#545454",
+        "layout": "slider",
+        "speed": 7
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "double-first": {
+      "type": "section-double",
+      "blocks": {
+        "double-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Lookbook",
+            "text_size": 11
+          }
+        },
+        "double-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        },
+        "double-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop the full collection",
+            "button_url": "shopify:\/\/collections\/lookbook",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "double-heading",
+        "double-text",
+        "double-buttons"
+      ],
+      "settings": {
+        "layout": "",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/chain-hoop-earrings-gold-earrings-alohas-439685.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "double-second": {
+      "type": "section-double",
+      "blocks": {
+        "double-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Charlie wears the Arp Hoops in silver",
+            "text_size": 8
+          }
+        },
+        "double-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/products\/arp-hoops-in-sterling-silver",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "double-heading",
+        "double-buttons"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/E-ARP-S_2018-12-05_02-17-39_Cq6Q8i4SzB_3000x_a2e94e75-12b5-4b53-979e-83537dd56c57.webp",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "collection-first": {
+      "type": "section-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "layout": "center",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--black",
+        "button_size": "",
+        "button_style": "btn--outline",
+        "featured_collection": "earrings",
+        "style": "grid",
+        "grid": 4,
+        "rows": 1,
+        "layout_mobile": "carousel",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "look": {
+      "type": "section-look",
+      "blocks": {
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "product": "maya-chain-in-gold",
+            "position_x": 41,
+            "position_y": 58
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "product": "bardot-earrings-in-gold",
+            "position_x": 74,
+            "position_y": 33
+          }
+        }
+      },
+      "block_order": [
+        "product-1",
+        "product-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/loosen-up-necklace-gold-necklaces-alohas-427374_900x_jpg.webp",
+        "title": "Shop the look",
+        "show_dots": true,
+        "enable_aspect_ratio": true,
+        "image_aspect_ratio": 1,
+        "button_type": "btn--white",
+        "button_style": "btn--solid",
+        "bg_color": "",
+        "color": "",
+        "dot_color": "",
+        "dot_background": "",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "double-third": {
+      "type": "section-double",
+      "blocks": {
+        "double-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Sinead wears the Gia Hoops in gold",
+            "text_size": 8
+          }
+        },
+        "double-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/products\/gia-hoop-gold-1",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "double-heading",
+        "double-buttons"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/trilogy-hoop-earrings-gold-earrings-alohas-911908.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "collection-second": {
+      "type": "section-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "layout": "center",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--black",
+        "button_size": "",
+        "button_style": "btn--outline",
+        "featured_collection": "frontpage",
+        "style": "grid",
+        "grid": 4,
+        "rows": 1,
+        "layout_mobile": "carousel",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "double-fourth": {
+      "type": "section-double",
+      "blocks": {
+        "double-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Eliana wears the Emeile Ring in silver",
+            "text_size": 8
+          }
+        },
+        "double-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/products\/emeile-grande-ring-in-sterling-silver",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "double-heading",
+        "double-buttons"
+      ],
+      "settings": {
+        "layout": "",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/R-SOPHIE-S.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "double-fifth": {
+      "type": "section-double",
+      "blocks": {
+        "double-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Charlie wears the Lotti Hoops in silver",
+            "text_size": 8
+          }
+        },
+        "double-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/products\/lotti-hoops-in-sterling-silver",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "double-heading",
+        "double-buttons"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/E-LOTTI-S_2018-12-05_02-17-39_eVmNUMsmqI_3000x_842250f6-c32b-41d8-9e41-cd0eb93769bd.webp",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "collection-third": {
+      "type": "section-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "layout": "center",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--black",
+        "button_size": "",
+        "button_style": "btn--outline",
+        "featured_collection": "rings",
+        "style": "grid",
+        "grid": 4,
+        "rows": 1,
+        "layout_mobile": "carousel",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "custom-content": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/R-MABEL-PERIDOT-G_125b352b-544d-466d-8b73-726258b17a1f.jpg",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "Bestsellers",
+            "heading_size": 7,
+            "description": "",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "Shop now",
+            "link": "#",
+            "button_type": "btn--white",
+            "button_style": "btn--text"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/B-EFFY-S_bdf4e38d-3dce-4903-9ce3-808ba4485ddd.jpg",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "Clearance",
+            "heading_size": 7,
+            "description": "",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "Shop now",
+            "link": "#",
+            "button_type": "btn--white",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2"
+      ],
+      "settings": {
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full-padded",
+        "borders": false,
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "double-first",
+    "double-second",
+    "collection-first",
+    "look",
+    "double-third",
+    "collection-second",
+    "double-fourth",
+    "double-fifth",
+    "collection-third",
+    "custom-content"
+  ]
+}

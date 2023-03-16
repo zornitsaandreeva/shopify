@@ -1,0 +1,186 @@
+<!-- /sections/blog.liquid -->
+
+{%- assign articles_per_row = section.settings.grid -%}
+{%- assign article_limit = articles_per_row | times: section.settings.rows -%}
+
+{%- style -%}
+  #Blog--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section id="Blog--{{ section.id }}"
+  class="blog-section section-padding"
+  data-section-id="{{ section.id }}"
+  data-section-type="blog"
+  style="--grid: repeat({{ articles_per_row }}, minmax(0, 1fr));">
+  <div class="wrapper--full-padded">
+    {%- if section.settings.show_title or section.settings.show_rss -%}
+      <h1 class="blog__title h3">
+        {%- if section.settings.show_title -%}
+          {{ blog.title }}
+        {%- endif -%}
+        {%- if section.settings.show_rss -%}
+          <a class="icon-rss" href="{{ blog.title }}.atom" rel="noopener" target="_blank">
+            {%- render 'icon-rss' -%}
+          </a>
+        {%- endif -%}
+      </h1>
+    {%- endif -%}
+
+    {%- if current_tags and section.settings.show_tag_nav == false -%}
+      <h2 class="blog__nav h5">
+        <a href="{{ blog.url }}" title="{{ 'blogs.article.all' | t }}" class="btn btn--black">
+          {{ current_tags.first }}
+          {%- render 'icon-cancel' -%}
+        </a>
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.show_tag_nav -%}
+      <ul class="inline-nav capitalize">
+        <li {% if current_tags == blank %} class="inline-nav--active"{% endif %}>
+          <a href="{{ blog.url }}">{{ 'blogs.article.all' | t }}</a>
+        </li>
+        {%- for tag in blog.all_tags -%}
+          <li {% if current_tags contains tag %}class="inline-nav--active"{% endif %}>
+            {{ tag | link_to_tag: tag }}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+
+  {%- paginate blog.articles by article_limit -%}
+    [% render 'partials/blog-posts' %]
+
+    {%- render 'pagination', paginate: paginate -%}
+  {%- endpaginate -%}
+
+  {%- if blog.articles_count == 0 -%}
+    <div class="collection-error centered">
+      <div class="wrapper--full-padded">
+        <div class="no-products h4 text-center">{{ 'blogs.article.no_articles' | t }}</div>
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+  {
+    "name": "Blog pages",
+    "settings": [
+
+      {
+        "type": "checkbox",
+        "id": "show_title",
+        "label": "Show title",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_rss",
+        "label": "Show RSS icon",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tag_nav",
+        "label": "Show tag navigation",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type":    "range",
+        "id":      "grid",
+        "min":     1,
+        "max":     4,
+        "step":    1,
+        "label":   "Articles per row",
+        "default": 4
+      },
+      {
+        "type":    "range",
+        "id":      "rows",
+        "min":     1,
+        "max":     5,
+        "step":    1,
+        "label":   "Number of rows",
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Articles"
+      },
+      {
+        "type": "range",
+        "id": "aspect_ratio",
+        "min": 0.5,
+        "max": 1.5,
+        "step": 0.1,
+        "unit": ":1",
+        "label": "Article image aspect ratio",
+        "info": "Wide to tall",
+        "default": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tags",
+        "label": "Show tags",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show date",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show 'Read more' button",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_comments",
+        "label": "Show comment count",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 0
+      }
+    ]
+  }
+{% endschema %}

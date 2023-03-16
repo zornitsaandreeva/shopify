@@ -1,0 +1,460 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "breadcrumb",
+            "show_rating": true,
+            "enable_star_rating": true,
+            "show_rating_count": false,
+            "padding_bottom": 8
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "padding_bottom": 16
+          }
+        },
+        "8d55b719-77b0-421d-b44e-72d3b5145d69": {
+          "type": "siblings",
+          "settings": {
+            "siblings_collection": "{{ product.metafields.theme.siblings.value }}",
+            "sibling_color": "{{ product.metafields.theme.siblings_color.value }}",
+            "padding_bottom": 16
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "info_page": "",
+            "subscriptions_enable_selectors": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_payment_button": false,
+            "padding_bottom": 32
+          }
+        },
+        "tabs": {
+          "type": "tab_richtext",
+          "settings": {
+            "show_read_more": true,
+            "style": "tabs",
+            "title_1": "Tab",
+            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "title_2": "Info",
+            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "title_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 0
+          }
+        },
+        "a61300c4-2c27-4fa6-a26e-6adf141c53f8": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_top": 20,
+            "padding_bottom": 20
+          }
+        },
+        "icon_1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-recycle",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free 30 Days Returns",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-truck",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free shipping on orders over $100",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "4b1d2a0b-a41e-4864-ac50-a473eb0bae1a": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-donation",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "1 year warranty",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+            "padding_bottom": 32
+          }
+        },
+        "divider_1": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_top": 20,
+            "padding_bottom": 20
+          }
+        },
+        "32de4e4a-673c-492c-8a3a-af62a27f821e": {
+          "type": "features",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "title": "Need styling help?",
+            "text": "<p>Book an appointment with our virtual stylists! <a href=\"https:\/\/broadcast-clean.myshopify.com\/pages\/contact\" title=\"Contact\">Chat now<\/a><\/p>",
+            "bg_color": "#f5f2ec",
+            "color": "#212121",
+            "padding_bottom": 16
+          }
+        },
+        "e54a1c0e-9a48-4d0f-a5d9-6cca2c03de42": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_top": 20,
+            "padding_bottom": 20
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "8d55b719-77b0-421d-b44e-72d3b5145d69",
+        "variants",
+        "buttons",
+        "tabs",
+        "a61300c4-2c27-4fa6-a26e-6adf141c53f8",
+        "icon_1",
+        "icon_2",
+        "4b1d2a0b-a41e-4864-ac50-a473eb0bae1a",
+        "pickup",
+        "divider_1",
+        "32de4e4a-673c-492c-8a3a-af62a27f821e",
+        "e54a1c0e-9a48-4d0f-a5d9-6cca2c03de42",
+        "upsell"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "image_layout": "stacked",
+        "image_size": "normal",
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_style": "slider",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "section-accordion",
+      "blocks": {
+        "faq-1": {
+          "type": "text",
+          "settings": {
+            "title": "How do I take care of my jewelry?",
+            "text": "<p><em><strong>14K Gold <\/strong><\/em><\/p><p>Scrub lightly with a fresh toothbrush and warm water. You can also buff your pieces using the cloth included in your order.<\/p><p><br\/><em><strong>Sterling Silver<\/strong><\/em><\/p><p>Gently rub the surface with the  cloth included in your order.<\/p>"
+          }
+        },
+        "faq-2": {
+          "type": "text",
+          "settings": {
+            "title": "Do you have a warranty?",
+            "text": "<p>Yes! For 3 years from the date of purchase, we’ll take care of your product if any damage to the material  occurs. Simply <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> and we’ll send you a replacement.<\/p><p>Please note: This warranty does not cover lost items, scratches that come with normal wear and tear, improper use or storage of your product, and any modification to your product done by a third party.<br\/><\/p>"
+          }
+        },
+        "faq-3": {
+          "type": "text",
+          "settings": {
+            "title": "How do I use the polishing cloth?",
+            "text": "<p>Gently rub the surface of your piece with the polishing cloth. Never wash the polishing cloth as it will lose its effectiveness, and keep out of reach of children!<\/p>"
+          }
+        },
+        "faq-4": {
+          "type": "text",
+          "settings": {
+            "title": "Do you create custom pieces?",
+            "text": "<p>We're not able to build custom pieces at this time. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "settings": {
+        "title": "Care Instructions",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "shipping": {
+      "type": "section-accordion",
+      "blocks": {
+        "shipping-0": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-green-shipment",
+            "icon_size": 25,
+            "icon_color": "#644d3e",
+            "title": "International Shipping",
+            "text": "<p>We are happy to announce we officially ship internationally! All orders are dispatched from our US warehouse within 2 - 3 business days.<\/p>"
+          }
+        },
+        "shipping-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-location",
+            "icon_size": 25,
+            "icon_color": "#644d3e",
+            "title": "Order tracking",
+            "text": "<p>Tracking numbers are automatically sent as soon as your order is packed. Please check your junk folder if you do not receive one 72hrs after placing your order.<\/p>"
+          }
+        },
+        "shipping-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 25,
+            "icon_color": "#644d3e",
+            "title": "Get in touch",
+            "text": "<p>If you have any questions about your order, please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a>. Our customer service is available Monday through Friday from 8am until 5pm est.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping-0",
+        "shipping-1",
+        "shipping-2"
+      ],
+      "settings": {
+        "title": "Shipping & Returns",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "about": {
+      "type": "section-accordion",
+      "blocks": {
+        "about-0": {
+          "type": "image",
+          "settings": {
+            "title": "Sustainable sourcing",
+            "text": "<p>We are committed to quality products that are manufactured ethically and sustainably. All of our pieces are traceable throughout the supply chain. We strive to ensure our products contribute to the well-being of people and planet, and our efforts put us on track towards a brighter future.<\/p>",
+            "image": "shopify:\/\/shop_images\/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg",
+            "aspect_ratio": 0.6
+          }
+        },
+        "about-1": {
+          "type": "image",
+          "settings": {
+            "title": "Ethical labor",
+            "text": "<p>Our founders Christina Smith and  Clement Savant founded Broadcast to break the norms of the jewelry industry. Cheap, disposable jewelry creates an incentive structure to bid out the work to the cheapest factory available.  We need to vote with our dollars for a more equitable world.<\/p>",
+            "image": "shopify:\/\/shop_images\/sumner-mahaffey-7Y0NshQLohk-unsplash_1.jpg",
+            "aspect_ratio": 0.6
+          }
+        },
+        "about-2": {
+          "type": "image",
+          "settings": {
+            "title": "Transparent values",
+            "text": "<p>We hold true to to who we are.  We believe in equality and justice for all, and those beliefs permeate the work that we do and the jewelry we make.  Everything we do stands for our values and we try to think, speak, and act in a framework of positive change.  Cast out your voice and make a difference. <\/p>",
+            "image": "shopify:\/\/shop_images\/sinitta-leunen-c-isIvyJR1w-unsplash.jpg",
+            "aspect_ratio": 0.6
+          }
+        }
+      },
+      "block_order": [
+        "about-0",
+        "about-1",
+        "about-2"
+      ],
+      "settings": {
+        "title": "Sourcing & Materials",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "enable_product_reviews": true,
+        "enable_accordion": true,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "9bacde02-4601-43dc-822c-346fb151937c": {
+      "type": "section-hero",
+      "blocks": {
+        "template--14574157070400__9bacde02-4601-43dc-822c-346fb151937c-16745749269961207c-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Recycled Materials",
+            "heading_size": 8
+          }
+        },
+        "template--14574157070400__9bacde02-4601-43dc-822c-346fb151937c-16745749269961207c-1": {
+          "type": "text",
+          "settings": {
+            "description": "We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157070400__9bacde02-4601-43dc-822c-346fb151937c-16745749269961207c-0",
+        "template--14574157070400__9bacde02-4601-43dc-822c-346fb151937c-16745749269961207c-1"
+      ],
+      "settings": {
+        "height": "five-fifty-height-hero",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/edward-xu-eTVe9uwYV84-unsplash-2.jpg",
+        "overlay_opacity": 0,
+        "overlay_color": "#000",
+        "show_overlay_text": false,
+        "flex_align": "align--middle-center",
+        "bg_color": "",
+        "color": "#FFFFFF"
+      }
+    },
+    "6cdb559d-dc93-41cb-bb8c-ff639ddda3ab": {
+      "type": "section-custom-content",
+      "blocks": {
+        "template--14574157070400__6cdb559d-dc93-41cb-bb8c-ff639ddda3ab-1674574937d23d66f5-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/two2.jpg",
+            "overlay_opacity": 5,
+            "overlay_color": "#000",
+            "show_overlay_text": false,
+            "title": "Pieces to Keep Forever",
+            "heading_size": 7,
+            "description": "Thoughtfully designed jewelry to wear everyday",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#FFFFFF",
+            "link_text": "Learn more",
+            "link": "shopify:\/\/pages\/about",
+            "button_type": "btn--white",
+            "button_style": "btn--text"
+          }
+        },
+        "1b60c401-0ea0-48dd-ad18-839f5f836cb7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Capture0009-4_copia.jpg",
+            "overlay_opacity": 0,
+            "overlay_color": "#000",
+            "show_overlay_text": false,
+            "title": "Latest Lookbook",
+            "heading_size": 7,
+            "description": "Our newest collection inspired by unique shapes",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#FFFFFF",
+            "link_text": "Shop now",
+            "link": "shopify:\/\/pages\/lookbook",
+            "button_type": "btn--white",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157070400__6cdb559d-dc93-41cb-bb8c-ff639ddda3ab-1674574937d23d66f5-0",
+        "1b60c401-0ea0-48dd-ad18-839f5f836cb7"
+      ],
+      "settings": {
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full-padded",
+        "borders": false,
+        "padding_top": 80,
+        "padding_bottom": 60
+      }
+    },
+    "related": {
+      "type": "related",
+      "settings": {
+        "related_products_enable": true,
+        "limit": 4,
+        "product_recommendations_heading": "Related products",
+        "show_recently_viewed": true,
+        "product_recently_limit": 4,
+        "product_recently_heading": "Recently viewed",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "29769446-1a48-4ad3-bb9c-960abc7b89f7": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "border_color": "#bcb2a8",
+        "bg_color": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq",
+    "shipping",
+    "about",
+    "reviews",
+    "9bacde02-4601-43dc-822c-346fb151937c",
+    "6cdb559d-dc93-41cb-bb8c-ff639ddda3ab",
+    "related",
+    "29769446-1a48-4ad3-bb9c-960abc7b89f7"
+  ]
+}

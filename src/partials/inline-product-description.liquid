@@ -1,0 +1,27 @@
+{%- liquid
+  assign product_description_content = product.description | strip
+  assign truncate_string = 'products.general.read_more' | t
+  assign show_more_button = block.settings.show_read_more
+  assign truncate_html = '<button type="button" class="caps--link" data-truncated-button>' | append: truncate_string | append: '</button>'
+
+  assign truncated_holder = ''
+  if show_more_button
+    assign truncated_holder = 'data-truncated-holder'
+  endif
+  -%}
+
+<div class="product__description__content rte">
+  <div class="product__description__content__holder" {{ truncated_holder }}>
+    <div class="product__description__content__inner">
+      <div class="product__description__content__entry" data-truncated-content="product__description__content__entry--truncate">
+        {{ product_description_content }}
+      </div>
+    </div>
+
+    <div class="product__description__content__actions">
+      {%- if show_more_button -%}
+        {{ truncate_html }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

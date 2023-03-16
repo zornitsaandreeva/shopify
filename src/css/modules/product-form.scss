@@ -1,0 +1,418 @@
+
+:root {
+  --form-top: 10px;
+  --form-left: 12px;
+  --form-margin: 32px;
+  --btn-height: calc(var(--btn-top) * 2 + var(--BTN-FONT-SIZE) * var(--line-height-normal) + 2px);
+}
+
+.quantity-selector,
+.select-popout__toggle,
+.select-popout__list,
+.product__subs__option,
+.radio__button { font-size: calc(var(--BTN-FONT-SIZE) * var(--FONT-ADJUST-BODY)); }
+
+.is-sticky .select-popout__list { max-height: 175px; }
+
+.variant__labels--hide {
+  .radio__legend,
+  .select__label {
+    @include visually-hidden;
+  }
+
+  .radio__legend__link { margin-left: 0; }
+
+  a {
+    font-family: var(--FONT-STACK-BODY);
+    font-weight: var(--FONT-WEIGHT-BODY);
+    font-size: calc(var(--BTN-FONT-SIZE) * var(--FONT-ADJUST-BODY));
+    color: var(--link);
+    transition: color 0.3s;
+
+    .index-product & { color: var(--text); }
+
+    @media (hover: hover) {
+      &:hover { color: var(--link-hover); }
+    }
+  }
+
+  .radio__buttons,
+  .select-popout {
+    grid-column: 1 / -1;
+  }
+}
+
+.shop-pay-terms {
+  --payment-terms-background-color: var(--bg);
+  margin: 10px 0 0;
+}
+
+.shop-pay-terms + .radio__legend__link { margin-bottom: 15px; }
+
+.shop-pay-terms:empty,
+.product__upsell:empty,
+.product__siblings:empty { display: none; }
+
+// Shopify Payment Terms Modal uses the same modal-wrapper class name without a shadowDOM wrapper 
+#shopify-payment-terms-modal .modal-wrapper { display: unset; }
+
+.selector-wrapper {
+  flex: 1 0 50%;
+
+  label { font-size: calc(0.75rem * var(--FONT-ADJUST-BODY)); }
+
+  @include media-query($mobile) {
+    flex-basis: 100%;
+  }
+}
+
+.selector-wrapper--fullwidth,
+.selector-wrapper--color { flex-basis: 100%; }
+
+.selector-wrapper--size { flex-grow: 0; }
+.selector-wrapper--size .radio__legend__link { margin-left: 4px; }
+
+.variant-input-wrap { margin-left: -4px; }
+
+.variant-label {
+  display: block;
+  margin: 15px 0 var(--form-margin);
+}
+
+.variant-field {
+  position: relative;
+  display: inline-block;
+}
+
+input[type="radio"].variant-input {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  clip: unset;
+  cursor: pointer;
+}
+
+.variant-input:checked + .variant__button-label { box-shadow: 0 0 0 2px var(--COLOR-PRIMARY); }
+
+.variant__button-label {
+  letter-spacing: 0.025em;
+  line-height: 1.6;
+  position: relative;
+  display: inline-block;
+  font-weight: var(--FONT-WEIGHT-BODY);
+  padding: 7px 15px 7px;
+  border-radius: var(--RADIUS);
+  background-color: #FFF;
+  box-shadow: 0 0 0 1px #E8E8E1;
+  margin: 0 4px 12px;
+  cursor: pointer;
+
+  &.disabled {
+    color: #E8E8E1;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      border-left: 1px solid;
+      border-color: #E8E8E1;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.is-focused .variant-input:focus+ .variant__button-label,
+.is-focused .swatch input[type="radio"]:focus+ .variant__button-label--color {
+  &:before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: -8px;
+    height: 2px;
+    width: calc(100% + 4px);
+    background: var(--COLOR-PRIMARY);
+  }
+}
+
+.quantity-selector {
+  position: relative;
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+    .no-js & { -webkit-appearance: auto; }
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+
+    .no-js & { -moz-appearance: auto; }
+  }
+
+  .no-js & {
+    display: block;
+  }
+}
+
+.quantity__input,
+.properties__input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: var(--line-height-normal);
+  color: var(--COLOR-TEXT);
+}
+.properties__input {
+  padding-top: var(--form-top);
+  padding-bottom: var(--form-top);
+}
+
+.quantity__input {
+  padding: var(--form-top) 30px;
+  text-align: center;
+}
+.quantity__plus {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.quantity__minus {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.quantity__plus,
+.quantity__minus {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+
+  * { pointer-events: none; }
+
+  .icon { color: var(--COLOR-TEXT); }
+
+  &:active { transform: translateY(1px); }
+
+  .no-js & { display: none; }
+}
+
+.properties__checkbox { grid-column: 1 / span 2; }
+
+/*================ Add to cart ================*/
+.product__submit__add {
+  position: relative;
+  width: 100%;
+}
+
+.product__submit__add .svg-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+.product__submit__add[disabled] { pointer-events: none; }
+.product__submit__add circle ~ circle { stroke: currentColor; }
+.product__submit__add span { transition: opacity 0.3s; }
+.product__submit__add .icon-nav-arrow-up {
+  --icon-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: calc(var(--icon-size) / -2);
+}
+
+.product__submit__buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.product__submit__buttons .btn { min-height: var(--btn-height); }
+
+.product__submit__buttons--inline {
+  @include media-query ($small-up) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.product__submit__item { min-height: var(--btn-height); }
+.product__submit__item .btn {
+  display: block;
+  width: 100%;
+}
+
+.product__submit__item--inline {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 100%);
+}
+
+/* Make Quantity picker height to always match the Add to cart button height */
+.product__submit__item--inline .select-popout__toggle {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: var(--btn-height);
+}
+
+/* Match quantity border color to adjacent button color */
+.product__submit__item--inline .select-popout{
+  --primary: var(--BTN-PRIMARY-BG-COLOR);
+}
+.product__submit--spb .product__submit__item--inline .select-popout{
+  --primary: var(--BTN-PRIMARY-BORDER-COLOR);
+}
+
+.product__block--divider:empty { display: block; }
+.product__block--divider + .product__block:empty + .product__block--divider { display: none; }
+
+/*================ Smart Shopify Payment Buttons ================*/
+.shopify-payment-button { width: 100%; }
+
+.shopify-payment-button .shopify-payment-button__button {
+  @extend .btn--primary;
+  @extend .btn--solid;
+}
+
+.shopify-payment-button .shopify-payment-button__button--branded { min-height: var(--btn-height); }
+.shopify-payment-button .shopify-payment-button__button--branded button {
+  min-height: var(--btn-height) !important;
+  padding: var(--btn-top) var(--btn-left) !important;
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY)) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+.shopify-payment-button .shopify-payment-button__button--branded form {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+}
+
+.shopify-payment-button .shopify-payment-button__button--unbranded {
+  @extend .btn;
+  width: 100%;
+  min-height: var(--btn-height);
+}
+.shopify-payment-button .shopify-payment-button__button--unbranded:hover:not([disabled]) {
+  background: var(--BTN-PRIMARY-BG-COLOR);
+  border-color: var(--BTN-PRIMARY-BORDER-COLOR);
+}
+.shopify-payment-button .shopify-payment-button__more-options {
+  display: none;
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+  font-size: calc(0.9rem * var(--FONT-ADJUST-BODY));
+  color: var(--COLOR-TEXT);
+
+  &:active {
+    text-decoration: underline;
+    transform: translateY(1px);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+/*================ Variant styles ================*/
+.product__block--classic .select__fieldset, 
+.product__block--classic .radio__fieldset { display: block; }
+.product__block--classic .radio__legend { margin-bottom: 10px; }
+
+/*================ Variant states ================*/
+.variant--soldout,
+.variant--unavailable {
+  .shopify-payment-button,
+  .product__price {
+    opacity: 0.3;
+
+    label,
+    input,
+    button { cursor: default; }
+  }
+
+  .product__submit__add:not(.product__submit__add--default):active { transform: translateY(0); }
+  .product__submit__add:not(.product__submit__add--default),
+  .product__submit__add:not(.product__submit__add--default):hover {
+    border-color: transparent;
+    background-color: var(--COLOR-A10);
+    color: var(--COLOR-A40);
+    cursor: not-allowed;
+
+    > * { pointer-events: none; }
+
+    @include media-query($small) {
+      transform: none;
+      pointer-events: none;
+    }
+  }
+
+  .shopify-payment-button {
+    position: relative;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0);
+      z-index: 2;
+    }
+  }
+}
+
+.variant--unavailable .product__price { opacity: 0; }
+
+/* Variant Countdown */
+.variant__countdown {
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.variant__countdown > span {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  min-height: 100%;
+}
+
+.count-is-in .variant__countdown--in,
+.count-is-low .variant__countdown--low,
+.count-is-out .variant__countdown--out,
+.count-is-unavailable .variant__countdown--unavailable { visibility: initial; }
+
+[data-remaining-show-notice="low-inventory"].count-is-in .variant__countdown--in,
+[data-remaining-show-notice="low-inventory"].count-is-out .variant__countdown--out,
+[data-remaining-show-notice="low-inventory"].count-is-unavailable .variant__countdown--unavailable { visibility: hidden; }
+
+// Show "Item is unavailable/sold out" if only form buttons are hidden
+.form__wrapper--no-buttons .count-is-out .variant__countdown--out,
+.form__wrapper--no-buttons .count-is-unavailable .variant__countdown--unavailable { visibility: initial; }
+
+.variant__countdown--in,
+.variant__countdown--low,
+.variant__countdown--out,
+.variant__countdown--unavailable { visibility: hidden; }

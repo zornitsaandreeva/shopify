@@ -1,0 +1,180 @@
+/**** Highlights ****/
+
+.highlights {
+  --margin: calc(var(--gap) / 2);
+  --margin-negative: calc(var(--margin) * -1);
+
+  position: relative;
+  color: var(--text);
+  background: var(--bg);
+  padding-top: var(--PT);
+  padding-bottom: var(--PB);
+
+  body.grid-compact & {
+    --gap: 0px;
+  }
+}
+
+.highlights .grid__heading-holder {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.highlights__container { overflow: hidden; }
+
+.highlights__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 var(--margin-negative) var(--gutter-offset);
+}
+
+.highlights__items--mobile-slider {
+  @include media-query ($small) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-left: var(--outer);
+    margin: 0 var(--outer-offset);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--outer);
+    @include hide-scrollbar;
+
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      padding-right: var(--gap);
+    }
+  }
+}
+
+.highlights__items--mobile-slider .highlights__item {
+  @include media-query ($small) {
+    flex: 0 0 auto;
+    width: calc(100% - 50px);
+    padding: 0;
+    margin: 0 var(--gap) 0 0;
+    scroll-snap-align: start;
+    &:last-child { margin-right: 0; }
+    &:only-child { width: 100%; }
+  }
+}
+
+.highlights__item {
+  --column-default: 1;
+  --width-desktop: 100% / var(--columns-desktop, var(--column-default));
+  --width-tablet: 100% / var(--columns-tablet, var(--column-default));
+  --width-mobile: 100% / var(--columns-mobile, var(--column-default));
+  --width-small: 100% / var(--columns-small, var(--column-default));
+  --width: var(--width-desktop);
+
+  --border: transparent;
+  flex-basis: calc(var(--width, 100%));
+  position: relative;
+  padding: 0 var(--margin);
+  margin-bottom: var(--gap);
+  text-align: center;
+
+  @include media-query ($large-up) { --width: var(--width-desktop); }
+
+  @include media-query ($medium) { --width: var(--width-tablet); }
+
+  @include media-query ($small) { --width: var(--width-small); }
+
+  @include media-query ($mobile) { --width: var(--width-mobile); }
+}
+
+.highlights__item--rectangle,
+.highlights__item--square,
+.highlights__item--circle {
+  color: var(--text);
+}
+
+.highlights__item--button {
+  --btn-bg: var(--bg);
+  --btn-text: var(--text);
+  --btn-border: var(--border);
+  --btn-bg-hover: var(--bg-brighter, transparent);
+  --btn-text-hover: var(--text);
+  --btn-border-hover: var(--border-brighter, transparent);
+
+  overflow: hidden;
+}
+
+.highlights__item__background {
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.highlights__item--rectangle .highlights__item__background { padding-bottom: 75%; }
+.highlights__item--circle .highlights__item__background {
+  clip-path: circle(50%);
+  border-radius: 50%;
+}
+
+.highlights__item--button .btn { max-width: none; }
+.highlights__item--button .btn:after { z-index: 1; }
+.highlights__item--button .btn.is-disabled:after { content: none; }
+
+.highlights__item--button .highlights__item__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: auto;
+  left: auto;
+  overflow: visible;
+  width: auto;
+  padding: 0;
+  transform: none;
+}
+.highlights__item--button .highlights__item__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.highlights__item .image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.highlights__item__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  max-width: 100%;
+  width: max-content;
+  margin: 0;
+  padding: var(--inner);
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.highlights__item-link {
+  --link: var(--text);
+  --link-hover: var(--text);
+
+  transition: none;
+}
+.highlights__item-link span { @include animate-underline-from-center-on-hover; }
+
+@media (hover: hover) {
+  .highlights__item-link:hover span { background-size: 100% 1px; }
+}

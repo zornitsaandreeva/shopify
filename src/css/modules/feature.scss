@@ -1,0 +1,46 @@
+/**
+ * Features
+ */
+
+.product__features {
+  position: relative;
+
+  .flickity-page-dots {
+    --text: var(--COLOR-PRIMARY);
+    justify-content: flex-end;
+    bottom: 0;
+    padding: 0 var(--inner) var(--inner);
+  }
+}
+
+// Prevent CLS on page load
+.js .product__features:not(.flickity-enabled) {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .product__feature {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    min-height: 100%;
+    width: 100%;
+
+    &:not(:first-child) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.product__feature {
+  --dots-height: 16px;
+  width: 100%;
+  color: var(--text);
+  background-color: var(--bg);
+  padding: calc(var(--inner) - 0.5em) var(--inner);
+}
+.flickity-enabled .product__feature { padding-bottom: calc(var(--inner) * 2 - 0.5em + var(--dots-height)); }
+
+.product__feature__heading {
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+}

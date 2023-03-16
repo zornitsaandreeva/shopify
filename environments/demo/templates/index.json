@@ -1,0 +1,940 @@
+{
+  "sections": {
+    "b006bf0c-09f0-44d5-ac32-c4bae268594c": {
+      "type": "section-hero",
+      "blocks": {
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Affordable Luxury",
+            "heading_size": 9
+          }
+        },
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-1": {
+          "type": "text",
+          "settings": {
+            "description": "Our latest collection now available",
+            "text_size": 4,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-2": {
+          "type": "button",
+          "settings": {
+            "link_text": "Shop the collection",
+            "link": "shopify:\/\/pages\/lookbook",
+            "button_type": "btn--secondary",
+            "button_size": "btn--large",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-0",
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-1",
+        "template--14574157103168__b006bf0c-09f0-44d5-ac32-c4bae268594c-1674244304b518ebaf-2"
+      ],
+      "settings": {
+        "height": "screen-height-three-quarters",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/broadcast-hero-gradient.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/broadcast-chelsea-9.jpg",
+        "overlay_opacity": 25,
+        "overlay_color": "#644d3e",
+        "show_overlay_text": true,
+        "flex_align": "align--bottom-left",
+        "bg_color": "",
+        "color": "#ffffff"
+      }
+    },
+    "edc09582-0a0c-40dd-8e25-9624e27991a1": {
+      "type": "section-rich-text",
+      "blocks": {
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Essentials Collection",
+            "text_size": 3
+          }
+        },
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Shop Our Favorites",
+            "text_size": 7
+          }
+        },
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fine jewelry for every day. Always ethically sourced and always fashionable.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-0",
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-1",
+        "template--14574157103168__edc09582-0a0c-40dd-8e25-9624e27991a1-167424645181d84d7b-2"
+      ],
+      "settings": {
+        "width": "wrapper--narrow",
+        "align_text": "text-center",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 70,
+        "padding_bottom": 0
+      }
+    },
+    "17fed0dd-9fc6-45fe-a850-16024a7d245f": {
+      "type": "section-columns",
+      "blocks": {
+        "be15f352-451c-4643-bb09-fe9a97b4f6b0": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/E-COM-5-73_3cf9935f-8391-4c4b-8c39-b2af7b8b9894.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "Modern Statement",
+            "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.<\/p>",
+            "button_text": "Shop Earrings",
+            "button_url": "shopify:\/\/collections\/earrings",
+            "button_type": "btn--secondary",
+            "button_style": "btn--text"
+          }
+        },
+        "9ae85f3c-e167-454e-bd2d-880b6dd94431": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/chain-large-hoop-earrings-gold-earrings-alohas-207522_3000x_51c4eb34-f70b-43fc-874e-1efece6421ed.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "The Classics Collection",
+            "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. <\/p>",
+            "button_text": "Shop Classics",
+            "button_url": "shopify:\/\/collections\/all",
+            "button_type": "btn--secondary",
+            "button_style": "btn--text"
+          }
+        },
+        "a5bb0b78-e877-4b64-927b-a0e620c831f5": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/E-COM-5-720_460438e8-f523-41fe-826a-6c63dc9a4343.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "Made-To-Order Jewelery",
+            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.<\/p>",
+            "button_text": "Shop now",
+            "button_url": "shopify:\/\/collections\/all",
+            "button_type": "btn--secondary",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "be15f352-451c-4643-bb09-fe9a97b4f6b0",
+        "9ae85f3c-e167-454e-bd2d-880b6dd94431",
+        "a5bb0b78-e877-4b64-927b-a0e620c831f5"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-center",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 40,
+        "layout_mobile": "carousel"
+      }
+    },
+    "1bfeff83-f52b-4bd1-aa64-0c34c059ed13": {
+      "type": "text-promo",
+      "blocks": {
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Get 20% off all sale items"
+          }
+        },
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-1": {
+          "type": "text",
+          "settings": {
+            "content": "Use code EXTRA at checkout"
+          }
+        },
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-2": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-0",
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-1",
+        "template--14574157103168__1bfeff83-f52b-4bd1-aa64-0c34c059ed13-1674247702ac5e305a-2"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "border": false,
+        "bg_color": "",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-studio-9430439-2.jpg",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "db673a21-2ae3-4915-94cb-c602a1e1de9f": {
+      "type": "section-tab-collections",
+      "blocks": {
+        "template--14574157103168__db673a21-2ae3-4915-94cb-c602a1e1de9f-16742478233f0ad92f-0": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "featured_collection": "earrings",
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/chain-hoop-earrings-gold-earrings-alohas-439685.jpg",
+            "align_with_product_images": true,
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "description": "<p>14k solid gold studs, hoops and pearls<\/p>",
+            "color": "#ffffff",
+            "link_text": "View products",
+            "link": "",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid"
+          }
+        },
+        "template--14574157103168__db673a21-2ae3-4915-94cb-c602a1e1de9f-16742478233f0ad92f-1": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "featured_collection": "rings",
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/broadcast-chelsea-3.jpg",
+            "align_with_product_images": true,
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "description": "<p>14k solid gold essentials, sterling silver statement pieces and more.<\/p>",
+            "color": "#ffffff",
+            "link_text": "Shop Rings",
+            "link": "shopify:\/\/collections\/rings",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid"
+          }
+        },
+        "3d4e12af-731d-44d1-bd3b-64f98e3e2961": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "featured_collection": "necklaces",
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/E-COM-5-724_0873e9b1-7246-4e8f-86a6-0739e01c201f.jpg",
+            "align_with_product_images": true,
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "description": "<p>From everyday essentials to statement pieces.<\/p>",
+            "color": "#ffffff",
+            "link_text": "Shop Necklaces",
+            "link": "shopify:\/\/collections\/necklaces",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__db673a21-2ae3-4915-94cb-c602a1e1de9f-16742478233f0ad92f-0",
+        "template--14574157103168__db673a21-2ae3-4915-94cb-c602a1e1de9f-16742478233f0ad92f-1",
+        "3d4e12af-731d-44d1-bd3b-64f98e3e2961"
+      ],
+      "settings": {
+        "title": "Best Sellers",
+        "text": "",
+        "layout": "stacked",
+        "show_product_count": false,
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 32
+      }
+    },
+    "7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f": {
+      "type": "section-announcement",
+      "blocks": {
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Timeless pieces to treasure forever<\/p>",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ethical sourcing and manufacturing<\/p>",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sustainable heirlooms<\/p>",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-0",
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-1",
+        "template--14574157103168__7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f-1674250204c27cd8a4-3"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "slider_speed": 7,
+        "marquee_speed": 100,
+        "bg_color": "#212121",
+        "color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ca81a084-edb3-4cd9-aae3-e7fe6ed443ba": {
+      "type": "section-custom-content",
+      "blocks": {
+        "template--14574157103168__ca81a084-edb3-4cd9-aae3-e7fe6ed443ba-1674250261011a41a8-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/E-COM-5-740.jpg",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "Duo Form Ring",
+            "heading_size": 7,
+            "description": "Explore rings for your big moment, and all the little memories after.",
+            "text_size": 3,
+            "flex_align": "align--bottom-left",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "Shop Now",
+            "link": "shopify:\/\/products\/ilona-ring-in-gold",
+            "button_type": "btn--white",
+            "button_style": "btn--solid"
+          }
+        },
+        "fadd3070-457b-48b6-9170-cb36e54b88e6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cocoa-pearl-gold-earrings-alohas-562722.jpg",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "Contemporary and Timeless",
+            "heading_size": 7,
+            "description": "Accessorize with 14k recycled gold all day, everyday.",
+            "text_size": 3,
+            "flex_align": "align--bottom-left",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "Shop Now",
+            "link": "shopify:\/\/products\/bardot-earrings-in-gold",
+            "button_type": "btn--white",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__ca81a084-edb3-4cd9-aae3-e7fe6ed443ba-1674250261011a41a8-0",
+        "fadd3070-457b-48b6-9170-cb36e54b88e6"
+      ],
+      "settings": {
+        "height": "seven-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "borders": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "b63c0ab3-4c19-41e9-bd02-3d2d7da325d7": {
+      "type": "section-rich-text",
+      "blocks": {
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Promise",
+            "text_size": 3
+          }
+        },
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Ethical is Beautiful",
+            "text_size": 7
+          }
+        },
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are committed to quality products that are manufactured ethically and sustainably. All of our pieces are traceable throughout the supply chain. We strive to ensure our products contribute to the well-being of people and planet, and our efforts put us on track towards a brighter future.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-3": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "shopify:\/\/pages\/about",
+            "button_type": "btn--secondary",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-0",
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-1",
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-2",
+        "template--14574157103168__b63c0ab3-4c19-41e9-bd02-3d2d7da325d7-167424645181d84d7b-3"
+      ],
+      "settings": {
+        "width": "wrapper--narrow",
+        "align_text": "text-center",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "23f305bf-f6f7-4e79-8bf6-d46af803c10b": {
+      "type": "section-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "layout": "center",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "featured_collection": "homepage",
+        "style": "grid",
+        "grid": 4,
+        "rows": 3,
+        "layout_mobile": "carousel",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "d7f42567-3e0d-412d-b5fa-3a18eab9dd21": {
+      "type": "section-look",
+      "blocks": {
+        "template--14574157103168__d7f42567-3e0d-412d-b5fa-3a18eab9dd21-16742507341c9c111d-0": {
+          "type": "product",
+          "settings": {
+            "product": "ilona-ring-in-gold",
+            "position_x": 48,
+            "position_y": 80
+          }
+        },
+        "template--14574157103168__d7f42567-3e0d-412d-b5fa-3a18eab9dd21-16742507341c9c111d-1": {
+          "type": "product",
+          "settings": {
+            "product": "adelaide-hoops-in-gold",
+            "position_x": 65,
+            "position_y": 41
+          }
+        },
+        "6c9dd923-fe7c-43ce-a48c-e258b5ac9ea0": {
+          "type": "product",
+          "settings": {
+            "product": "baby-gia-hoops-in-gold",
+            "position_x": 74,
+            "position_y": 36
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__d7f42567-3e0d-412d-b5fa-3a18eab9dd21-16742507341c9c111d-0",
+        "template--14574157103168__d7f42567-3e0d-412d-b5fa-3a18eab9dd21-16742507341c9c111d-1",
+        "6c9dd923-fe7c-43ce-a48c-e258b5ac9ea0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/trilogy-hoop-earrings-gold-earrings-alohas-973375_900x_jpg.webp",
+        "title": "Shop the look",
+        "show_dots": true,
+        "enable_aspect_ratio": true,
+        "image_aspect_ratio": 1.2,
+        "button_type": "btn--white",
+        "button_style": "btn--solid",
+        "bg_color": "",
+        "color": "",
+        "dot_color": "",
+        "dot_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "5e609196-e6a5-4326-a09b-5222405094b7": {
+      "type": "section-divider",
+      "disabled": true,
+      "settings": {
+        "show_line": false,
+        "width": "wrapper--full",
+        "border_color": "",
+        "bg_color": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "de198694-3ea4-4863-a5d2-2dc2c47b1d8e": {
+      "type": "section-double",
+      "blocks": {
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-0": {
+          "type": "heading",
+          "settings": {
+            "title": "The Essential Collection",
+            "text_size": 7
+          }
+        },
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-2": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop now",
+            "button_url": "shopify:\/\/collections\/all",
+            "button_type": "btn--secondary",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-0",
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-1",
+        "template--14574157103168__de198694-3ea4-4863-a5d2-2dc2c47b1d8e-1674251057de9394c2-2"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "image-height",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/stamp-ring-gold-rings-alohas-178917.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "de3cbdb7-5f5e-4364-8a48-ba054957d47e": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": false,
+        "width": "wrapper--full",
+        "border_color": "",
+        "bg_color": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "fb4842b1-e662-4a25-a5a4-df38ff29d090": {
+      "type": "section-collections-list",
+      "blocks": {
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets",
+            "collection_image": "shopify:\/\/shop_images\/talisman-bracelet-gold-bracelets-alohas-727532_3000x_756a0a12-4cc1-4fd5-8d0c-9a26fd5cf1a0.jpg",
+            "title": ""
+          }
+        },
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "collection_image": "shopify:\/\/shop_images\/E-OPHELIA-S-2.jpg",
+            "title": ""
+          }
+        },
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklaces",
+            "collection_image": "shopify:\/\/shop_images\/1500280.jpg",
+            "title": ""
+          }
+        },
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "rings",
+            "collection_image": "shopify:\/\/shop_images\/R-EMEILEGRANDE-G_2_2018-12-05_01-46-40_0dIlF2LE9x.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-0",
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-1",
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-2",
+        "template--14574157103168__fb4842b1-e662-4a25-a5a4-df38ff29d090-1674251263ca9f6285-3"
+      ],
+      "settings": {
+        "title": "",
+        "description": "",
+        "layout": "grid",
+        "aspect_ratio": 1.2,
+        "enable_slider": true,
+        "bg_color": "",
+        "color": "",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b": {
+      "type": "section-press-logos",
+      "blocks": {
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-0": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/vanity_fair-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-1": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/marie_claire-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-2": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/vogue-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "30df11a4-bd0b-45bc-afe1-f9a1929322a6": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/allure-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-0",
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-1",
+        "template--14574157103168__3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b-16742476928518914e-2",
+        "30df11a4-bd0b-45bc-afe1-f9a1929322a6"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "enable_heading_slider": false,
+        "logo_opacity": 60,
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "4b689f4e-a68f-46c4-91ba-0d477a354b93": {
+      "type": "section-hero",
+      "blocks": {
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Modern Heirlooms",
+            "heading_size": 8
+          }
+        },
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-1": {
+          "type": "text",
+          "settings": {
+            "description": "Beautiful pieces to pass down for generations to come",
+            "text_size": 4,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-2": {
+          "type": "button",
+          "settings": {
+            "link_text": "View products",
+            "link": "shopify:\/\/collections\/all",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--text"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-0",
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-1",
+        "template--14574157103168__4b689f4e-a68f-46c4-91ba-0d477a354b93-1674244304b518ebaf-2"
+      ],
+      "settings": {
+        "height": "screen-height-three-quarters",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/ALOHAS--72_copia-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/E-COM-5-720_460438e8-f523-41fe-826a-6c63dc9a4343.jpg",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "flex_align": "align--middle-center",
+        "bg_color": "",
+        "color": "#ffffff"
+      }
+    },
+    "aaa1b025-140d-49b8-a430-60b66282c1f7": {
+      "type": "section-rich-text",
+      "blocks": {
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Get Inspired",
+            "text_size": 3
+          }
+        },
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Tag us on Instagram for a chance to get featured",
+            "text_size": 5
+          }
+        },
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "text_size": 4,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-3": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-0",
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-1",
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-2",
+        "template--14574157103168__aaa1b025-140d-49b8-a430-60b66282c1f7-167449160115d5c089-3"
+      ],
+      "settings": {
+        "width": "wrapper--full-padded",
+        "align_text": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "d1db6e48-60ba-494c-b265-a96ca033f789": {
+      "type": "section-columns",
+      "blocks": {
+        "f91cb9e1-4f84-4161-b003-7ad9de944a6d": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify:\/\/shop_images\/pexels-sunsetoned-6431174.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "",
+            "text": "<p><a href=\"https:\/\/www.instagram.com\/shopify\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/shopify\">@juliajames<\/a><\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--black",
+            "button_style": "btn--text"
+          }
+        },
+        "5052fe01-ff4d-4d8e-9988-0de64567bab5": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify:\/\/shop_images\/broadcast-chelsea-4.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "",
+            "text": "<p><a href=\"https:\/\/www.instagram.com\/shopify\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/shopify\">@willaroams<\/a><\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--black",
+            "button_style": "btn--text"
+          }
+        },
+        "6d5170c1-9e6f-46f0-8f1e-ac6bb01cdf2c": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify:\/\/shop_images\/jess-harper-sunday-bLkj9eNhW90-unsplash_2.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "",
+            "text": "<p><a href=\"https:\/\/www.instagram.com\/shopify\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/shopify\">@libertyjones<\/a><\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--black",
+            "button_style": "btn--text"
+          }
+        },
+        "9f174201-2708-4697-9223-1412f204d578": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify:\/\/shop_images\/broadcast-chelsea-10.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "",
+            "text": "<p><a href=\"https:\/\/instagram.com\/shopify\" target=\"_blank\" title=\"https:\/\/instagram.com\/shopify\">@ellasays<\/a><\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "f91cb9e1-4f84-4161-b003-7ad9de944a6d",
+        "5052fe01-ff4d-4d8e-9988-0de64567bab5",
+        "6d5170c1-9e6f-46f0-8f1e-ac6bb01cdf2c",
+        "9f174201-2708-4697-9223-1412f204d578"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-left",
+        "align_columns": "flex-align-center",
+        "width": "wrapper--full-padded",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "layout_mobile": "carousel"
+      }
+    },
+    "ef72b950-0372-46d8-8da6-308144855419": {
+      "type": "section-text-row",
+      "blocks": {
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-0": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-fast-shipment",
+            "icon_size": 35,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "Free Expedited Shipping",
+            "text": "<p>For orders over $50<\/p>"
+          }
+        },
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-1": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-donation",
+            "icon_size": 35,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "We Plant Trees",
+            "text": "<p>For every product we plant 1 tree<\/p>"
+          }
+        },
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-2": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-chat",
+            "icon_size": 35,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "On Demand Stylists",
+            "text": "<p>Available 24\/7<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-0",
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-1",
+        "template--14574157103168__ef72b950-0372-46d8-8da6-308144855419-16742468774b11c581-2"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-center",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "layout_mobile": "carousel"
+      }
+    }
+  },
+  "order": [
+    "b006bf0c-09f0-44d5-ac32-c4bae268594c",
+    "edc09582-0a0c-40dd-8e25-9624e27991a1",
+    "17fed0dd-9fc6-45fe-a850-16024a7d245f",
+    "1bfeff83-f52b-4bd1-aa64-0c34c059ed13",
+    "db673a21-2ae3-4915-94cb-c602a1e1de9f",
+    "7e8bf66e-aee2-4cbd-b3cf-a5f9d3a3f71f",
+    "ca81a084-edb3-4cd9-aae3-e7fe6ed443ba",
+    "b63c0ab3-4c19-41e9-bd02-3d2d7da325d7",
+    "23f305bf-f6f7-4e79-8bf6-d46af803c10b",
+    "d7f42567-3e0d-412d-b5fa-3a18eab9dd21",
+    "5e609196-e6a5-4326-a09b-5222405094b7",
+    "de198694-3ea4-4863-a5d2-2dc2c47b1d8e",
+    "de3cbdb7-5f5e-4364-8a48-ba054957d47e",
+    "fb4842b1-e662-4a25-a5a4-df38ff29d090",
+    "3a5fa0e1-12ed-4426-b819-8b6bce5a5c7b",
+    "4b689f4e-a68f-46c4-91ba-0d477a354b93",
+    "aaa1b025-140d-49b8-a430-60b66282c1f7",
+    "d1db6e48-60ba-494c-b265-a96ca033f789",
+    "ef72b950-0372-46d8-8da6-308144855419"
+  ]
+}

@@ -1,0 +1,106 @@
+/*====== FAQ List ======*/
+
+.faq-list-holder {
+  @include media-query($small) {
+    overflow: hidden;
+  }
+}
+
+.faq-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include media-query($small) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--outer);
+    padding-left: var(--outer);
+    -webkit-overflow-scrolling: touch;
+    @include hide-scrollbar;
+
+    &:after {
+      content: '';
+      min-height: 1px;
+      display: block;
+      position: relative;
+      padding-right: var(--outer);
+    }
+  }
+}
+
+.faq-list__item {
+  flex-basis: 45%;
+  padding: calc(var(--gutter) / 2) 0;
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  line-height: 1.3;
+
+  &:only-child { flex-basis: 100%; }
+
+  @include media-query($small) {
+    scroll-snap-align: start;
+    flex: 0 0 calc(100% - 50px);
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+  }
+}
+.faq-list__item--form:only-child {
+  display: flex;
+  justify-content: center;
+
+  @include media-query ($medium-up) {
+    flex-basis: 45%;
+    margin: 0 auto;
+  }
+}
+
+.faq-list__item .contact-form {
+  max-width: 520px;
+  margin: 0;
+}
+.faq-list__item:only-child .contact-form { margin: 0 auto; }
+
+.faq-list--3 .faq-list__item,
+.faq-list--6 .faq-list__item,
+.faq-list--9 .faq-list__item {
+  flex-basis: 30%;
+
+  @include media-query($small) {
+    flex-basis: calc(100% - 50px);
+  }
+}
+
+.faq-list__item-title {
+  margin-bottom: calc(var(--gutter) / 3);
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-HEADING));
+  font-weight: var(--FONT-WEIGHT-HEADING);
+}
+
+.image-wrapper + .faq-list__item-title { margin-top: calc(var(--gutter) / 3); }
+
+.faq-list__item-icon .icon__animated { padding-bottom: calc(var(--inner) / 4); }
+
+.faq-list__item-image {
+  @include media-query($small) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.faq__title {
+  margin: 2.5rem 0;
+  font-size: calc(var(--font-5) * var(--FONT-ADJUST-HEADING));
+
+  &:first-child { margin-top: 0; }
+}
+
+.section-faq .accordion__body {
+  @include media-query ($small) {
+    margin-left: calc(var(--outer) * -2);
+    margin-right: calc(var(--outer) * -2);
+  }
+}

@@ -1,0 +1,14 @@
+{%- liquid
+  comment
+    Determine if current option matches size handle translations
+  endcomment
+  assign is_size_option = false
+  if show_size_chart and is_size_option == false
+    assign size_translation = 'general.size_chart.size' | t
+    assign translation_string = size_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | replace: ',', '____' | handle | replace: '____', ',' | append: ',' | prepend: ','
+
+    if translation_string contains option_name_handle_separator
+      assign is_size_option = true
+      assign show_size_link_inline = true
+    endif
+  endif -%}

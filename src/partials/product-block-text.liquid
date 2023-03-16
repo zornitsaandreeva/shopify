@@ -1,0 +1,15 @@
+{%- if block.settings.title != blank or block.settings.text != blank -%}
+  <div class="product__block product__text" {{ block.shopify_attributes }} {{ block_style }}>
+    {%- if block.settings.title != blank -%}
+      <p class="product__heading strong">
+        {{- block.settings.title -}}
+      </p>
+    {%- endif -%}
+
+    {%- if block.settings.text != blank -%}
+      <div class="product__subheading">
+        {{- block.settings.text -}}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

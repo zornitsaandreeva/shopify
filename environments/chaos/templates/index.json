@@ -1,0 +1,409 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "section-slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "title": "Broadcast theme",
+            "description": "A full featured Shopify theme built for modern commerce",
+            "color": "#ffffff",
+            "first_button_text": "View products",
+            "first_button_link": "shopify:\/\/collections\/all",
+            "first_button_type": "btn--white",
+            "first_button_size": "btn--large",
+            "first_button_style": "btn--solid"
+          }
+        },
+        "slideshow-1": {
+          "type": "image",
+          "settings": {
+            "title": "Broadcast theme",
+            "description": "It's like your last theme, except it's faster and better",
+            "color": "#ffffff",
+            "first_button_text": "View products",
+            "first_button_link": "shopify:\/\/collections\/all",
+            "first_button_type": "btn--white",
+            "first_button_size": "btn--large",
+            "first_button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "slideshow-1"
+      ],
+      "settings": {
+        "height": "screen-height-two-thirds",
+        "transition": "slide",
+        "autoplay": false
+      }
+    },
+    "docs": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Newly Updated",
+            "text_size": 3
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Broadcast Documentation",
+            "text_size": 7
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Broadcast has been extensively documented to help you learn what's possible and get the most out of the theme.  Learn how to set up advanced menus, color swatches, sophisticated cart upsells, and more.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "See the new Broadcast docs",
+            "button_url": "https:\/\/broadcast.invisiblethemes.com\/"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "align_text": "text-left",
+        "bg_color": "#ffffff",
+        "color": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image-with-text": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "overlay_color": "#000",
+            "title": "",
+            "description": "",
+            "flex_align": "align--middle-left",
+            "color": "#ffffff",
+            "link_text": "",
+            "link": "shopify:\/\/collections\/all",
+            "button_type": "btn--white",
+            "button_style": "btn--outline"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "subheading": "Delete your apps",
+            "title": "Broadcast has that feature",
+            "heading_size": 7,
+            "text": "<p>Upsells, promos, shipping calculators, Broadcast has it all. Try deleting this block and replacing it with a collection, newsletter, video, or testimonial. Broadcast has the power and flexibility you need.<\/p>",
+            "text_size": 3,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "#ffffff",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image",
+        "text"
+      ],
+      "settings": {
+        "height": "screen-height-one-half",
+        "borders": false
+      }
+    },
+    "product-with-image": {
+      "type": "section-custom-content",
+      "disabled": true,
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "title": "Sell with style",
+            "product": "",
+            "bg_color": "#ffffff"
+          }
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "title": "Commerce first",
+            "description": "Focus on your products with innovative sections focused on selling",
+            "link_text": "",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "product",
+        "image"
+      ],
+      "settings": {
+      }
+    },
+    "tabs": {
+      "type": "section-tab-collections",
+      "blocks": {
+        "tabs-0": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        },
+        "tabs-1": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "tabs-0",
+        "tabs-1"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "rich-text": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Time is money",
+            "text_size": 3
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Built for speed",
+            "text_size": 8
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Broadcast was built from the ground up to take advantage of modern development techniques that make your site run as fast as possible.  Using progressive technique like image lazy-loading, code splitting, and preloading, Broadcast is the fast and nimble platform your store needs to level up.  Customers are not patient, and you should not be settling for less.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Ready set go",
+            "button_url": "shopify:\/\/collections",
+            "button_type": "btn--primary",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "align_text": "text-left",
+        "bg_color": "#ffffff",
+        "color": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "lookbook": {
+      "type": "section-look",
+      "blocks": {
+        "lookbook-0": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "position_x": 18,
+            "position_y": 50
+          }
+        },
+        "lookbook-1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "position_x": 41,
+            "position_y": 7
+          }
+        }
+      },
+      "block_order": [
+        "lookbook-0",
+        "lookbook-1"
+      ],
+      "settings": {
+        "title": "Shop the look"
+      }
+    },
+    "featured-collection": {
+      "type": "section-collection",
+      "settings": {
+        "link_text": "",
+        "grid": 4,
+        "rows": 2
+      }
+    },
+    "hero": {
+      "type": "section-hero",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Broadcast theme",
+            "heading_size": 9
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "description": "Modern commerce built for speed",
+            "text_size": 5,
+            "text_style": "font-body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "link_text": "View products",
+            "link": "shopify:\/\/collections\/all",
+            "button_type": "btn--white",
+            "button_style": "btn--outline"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "flex_align": "align--middle-left",
+        "bg_color": "",
+        "color": "#ffffff"
+      }
+    },
+    "logos": {
+      "type": "section-press-logos",
+      "blocks": {
+        "logos-0": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 100,
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>"
+          }
+        },
+        "logos-1": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 100,
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>"
+          }
+        },
+        "logos-2": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 100,
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "logos-0",
+        "logos-1",
+        "logos-2"
+      ],
+      "settings": {
+        "title": "Press",
+        "logo_opacity": 60,
+        "bg_color": "#ffffff"
+      }
+    },
+    "icons": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon-0": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-shield",
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "Secure transactions",
+            "text": "<p>Transactions are handled with bank-grade security.<p>"
+          }
+        },
+        "icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-recycle",
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "Simple checkout",
+            "text": "<p>Our secure checkout is quick and easy to use.<p>"
+          }
+        },
+        "icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "title": "Get in touch",
+            "text": "<p>Have questions? Get in touch with us at any time.<p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon-0",
+        "icon-1",
+        "icon-2"
+      ],
+      "settings": {
+        "bg_color": "#fafafa"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "docs",
+    "image-with-text",
+    "product-with-image",
+    "tabs",
+    "rich-text",
+    "lookbook",
+    "featured-collection",
+    "hero",
+    "logos",
+    "icons"
+  ]
+}

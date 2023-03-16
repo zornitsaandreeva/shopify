@@ -1,0 +1,129 @@
+/* ============================================================================
+  #Search popdown
+============================================================================== */
+header-search-popdown {
+  display: block;
+  height: 100%;
+}
+
+header-search-popdown > details { height: 100%; }
+
+.search-popdown {
+  @include nav;
+  --bg: var(--COLOR-MENU-BG);
+  --border: var(--COLOR-BORDER);
+  --text: var(--COLOR-MENU-LINK);
+  --link-hover: var(--COLOR-MENU-LINK-HOVER);
+  --text-dark: var(--COLOR-MENU-LINK);
+  --text-light: var(--COLOR-MENU-LINK);
+  --text-transparent: var(--COLOR-MENU-TRANSPARENT);
+
+  position: absolute;
+  z-index: 6001;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+  transform: translate3d(0, -100%, 0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: var(--bg);
+
+  .search-form { position: static; }
+
+  input[type="search"] {
+    @include nav-bold;
+    width: 100%;
+    border: none;
+    margin: 0;
+    text-align: left;
+    color: var(--text);
+    font-size: calc(var(--font-2) * var(--FONT-ADJUST-NAV));
+
+    &::placeholder {
+      color: var(--text);
+    }
+
+    &:focus,
+    &:active { box-shadow: none; }
+  }
+}
+
+.no-js .search-popdown { transition: none; }
+
+.no-js details[open],
+details[open="true"] {
+  .search-popdown,
+  .predictive-search {
+    width: 100vw;
+    padding-right: var(--scrollbar-width); // Prevent CLS on opening/closing animation
+  }
+
+  .search-popdown {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+    transform: translate3d(0, 0, 0);
+    max-height: calc(100vh - var(--announcement-height));
+  }
+
+  .drawer__underlay {
+    opacity: var(--underlay-opacity);
+    visibility: visible;
+    transition-duration: 0.3s, 0s;
+    transition-delay: 0.1s, 0s;
+  }
+}
+
+.no-js details[open] {
+  .search-popdown__close__button { display: none; }
+
+  .navlink--search {
+    position: absolute;
+    z-index: 6002;
+    .icon-search { display: none; }
+    .icon-cancel { display: block; }
+  }
+}
+
+.search-popdown__main {
+  width: 100%;
+  height: var(--menu-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+  background: var(--bg);
+  transition: transform 0.5s ease;
+}
+
+.search-popdown__close {
+  position: relative;
+  width: 80px;
+  height: 100%;
+  display: flex;
+}
+
+.search-popdown__close__button {
+  @include sidebar-close;
+  --icon-size: 24px;
+  font-size: calc(1rem * var(--FONT-ADJUST-NAV));
+  cursor: pointer;
+  width: 34px;
+  padding: 20px 5px;
+  height: 100%;
+  right: -11px;
+}
+
+.search-popdown__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  margin-left: -8px;
+  padding: 0;
+
+  .icon { fill: none; }
+}

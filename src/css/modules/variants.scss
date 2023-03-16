@@ -1,0 +1,540 @@
+.selector-wrapper {
+  select { width: 100%; }
+
+  label { font-size: calc(12px * var(--FONT-ADJUST-BODY)); }
+}
+
+.no-js .product__selectors { display: none; }
+
+.product__selectors .select__fieldset,
+.product__selectors .radio__fieldset {
+  padding-top: calc(var(--form-margin) / 2);
+  padding-bottom: calc(var(--form-margin) / 2);
+}
+.product__selectors > .selector-wrapper:last-child .radio__fieldset { margin-bottom: 0; }
+.product__selectors .radio__legend__link__label { @include visually-hidden; }
+
+.product__block--lines {
+  padding-top: calc(var(--form-margin) / 2);
+  padding-bottom: calc(var(--form-margin) / 2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  & + .product__block--lines {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .selector-wrapper .select__fieldset,
+  .selector-wrapper .radio__fieldset {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .selector-wrapper:first-child .select__fieldset,
+  .selector-wrapper:first-child .radio__fieldset {
+    padding-top: 0;
+  }
+
+  .selector-wrapper:last-child .select__fieldset,
+  .selector-wrapper:last-child .radio__fieldset {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.select__fieldset,
+.radio__fieldset {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 100%);
+}
+
+.select__fieldset .radio__legend__label,
+.select__fieldset .select__label {
+  display: block;
+  padding-right: 0;
+  margin: 5px 0;
+  align-self: center;
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+
+  &.is-hidden {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* = both radio and swatch = */
+
+.radio__legend {
+  display: block;
+  margin: 0 0 -10px;
+  padding: 0;
+  width: 100%;
+  font-weight: var(--FONT-WEIGHT-BODY);
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+}
+
+.radio__legend.is-hidden {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.radio__fieldset--single {
+  display: block;
+  padding: calc(var(--form-margin) / 2) 0;
+}
+
+.radio__fieldset--single .radio__legend__link {
+  display: inline;
+  color: var(--link);
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  @include animate-underline-from-center-on-hover;
+}
+
+.radio__fieldset--single .btn-question-mark { display: none; }
+
+.radio__legend__link {
+  display: inline-block;
+  vertical-align: middle;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.radio__legend__option-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-question-mark {
+  display: block;
+  text-align: center;
+  background: var(--bg-accent);
+  border-radius: var(--RADIUS);
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  min-width: calc(var(--font-2) * var(--FONT-ADJUST-BODY) * 1.375);
+}
+
+.radio__legend__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+  background-color: var(--COLOR-TEXT);
+  opacity: 0.4;
+}
+
+.radio__legend__label,
+.radio__fieldset__label {
+  display: block;
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+}
+
+.radio__legend__label {
+  word-break: break-word;
+
+  @include media-query($medium-up) {
+    padding-top: 0;
+  }
+}
+
+.radio__legend__value {
+  display: block;
+  padding-top: 4px;
+  font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY));
+}
+
+.swatch__button label:hover,
+.radio__button label:hover { cursor: pointer; }
+
+/* = radio button specific = */
+.radio__button {
+  position: relative;
+  display: inline-block;
+}
+
+.radio__fieldset {
+  .radio__button label {
+    display: block;
+    font-family: var(--BTN-FONT-STACK);
+    font-size: var(--BTN-FONT-SIZE);
+    font-style: var(--BTN-FONT-STYLE);
+    font-weight: var(--BTN-FONT-WEIGHT);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--BTN-LETTER-SPACING);
+    text-transform: var(--BTN-UPPERCASE);
+    position: relative;
+    margin: 0;
+    padding: var(--btn-top);
+    min-width: calc(var(--BTN-FONT-SIZE) * var(--line-height-normal) + var(--btn-top) * 2 + 2px); // Add 2px for borders
+    text-align: center;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid var(--COLOR-A20);
+    border-radius: var(--RADIUS);
+    transition: color 0.5s $ease-out-fast, background 0.5s $ease-out-fast, border 0.5s $ease-out-fast;
+
+    &:hover,
+    &:active,
+    &:focus { border: 1px solid var(--primary); }
+  }
+
+  .radio__button input:disabled + label,
+  .radio__button input.sold-out + label,
+  .radio__button input.unavailable + label {
+    background-color: var(--COLOR-A5);
+    color: var(--COLOR-A20);
+  }
+
+  .radio__button input:checked ~ label { border-color: var(--primary); }
+}
+
+.radio__fieldset .radio__buttons { margin: -4px; }
+.radio__fieldset--swatches .radio__buttons { margin: 0 -2px; }
+
+.radio__fieldset--swatches .swatch__button,
+.radio__button {
+  padding: 4px;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.radio__fieldset--swatches.is-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.radio__fieldset--swatches.is-visible .swatch__button { animation: fadeIn 0.5s var(--animation-delay) both; }
+.radio__fieldset--swatches.is-visible + .product-item__swatches__count {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.radio__fieldset--small {
+  display: block;
+  padding: var(--form-margin) 0;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 calc(var(--inner) / 2);
+  background-color: var(--COLOR-BG);
+  transition: opacity 0.3s ease, visibility 0.3s;
+
+  .radio__button label {
+    padding: 5px;
+    font-size: calc(0.75rem * var(--FONT-ADJUST-BODY));
+    line-height: 26px;
+  }
+
+  .radio__legend__label {
+    font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY));
+    padding-right: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    p {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  .swatch__button {
+    --swatch-size: 26px;
+    padding: 5px 0;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .swatch__button input:checked ~ label { margin: 0; }
+  .swatch__button input:checked + label:after { border-color: var(--border); }
+
+  .swatch__button--square label {
+    min-width: var(--swatch-size);
+    min-height: calc(var(--swatch-size) / 2);
+  }
+
+  .radio__fieldset__arrow { pointer-events: initial; }
+
+  .no-js & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.radio__fieldset__arrow {
+  --icon-size: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 10px;
+  height: var(--icon-size);
+  min-height: inherit;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--text);
+  transition: opacity 0.2s ease;
+  pointer-events: auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 100%;
+  }
+
+  .icon {
+    position: relative;
+    flex: 1 0 var(--icon-size);
+  }
+}
+
+.radio__fieldset__arrow--prev {
+  left: 0;
+  justify-content: flex-start;
+}
+.radio__fieldset__arrow--prev .icon { margin-left: -8px; }
+.radio__fieldset__arrow--prev:before {
+  left: 3px;
+  background: linear-gradient(to right, var(--COLOR-BG) 50%, var(--COLOR-BG-TRANSPARENT) 100%);
+}
+.radio__fieldset__arrow--next {
+  right: 0;
+  justify-content: flex-end;
+}
+.radio__fieldset__arrow--next .icon { margin-right: -8px; }
+.radio__fieldset__arrow--next:before {
+  right: 3px;
+  background: linear-gradient(to left, var(--COLOR-BG) 50%, var(--COLOR-BG-TRANSPARENT) 100%);
+}
+
+.selector-wrapper__actions {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px; // To match swatches/siblings size
+  pointer-events: none;
+
+  .no-js & {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    transform: none;
+  }
+}
+
+.selector-wrapper__scrollbar {
+  position: relative;
+  margin: -5px; // Needs negative margin + padding to prevent active swatches borders being cut off
+  padding: 5px;
+  width: calc(100% + 10px);
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  @include hide-scrollbar;
+}
+
+/* = swatch button specific = */
+
+.swatch__button {
+  --swatch: #CCC;
+  --swatch-size: 32px;
+  --swatch-outline-offset: 3px;
+  display: inline-block;
+  padding: 5px 0;
+  margin: 0 10px 10px 0;
+  position: relative;
+  pointer-events: initial;
+}
+
+.swatch__button.sale:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-top: 4px;
+  background-color: var(--COLOR-SALE);
+  transform: translateX(-50%);
+}
+
+.swatch__button input,
+.radio__button input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: block;
+}
+
+.selector-wrapper fieldset label { margin-top: unset; }
+
+.swatch__button .sibling__link,
+.swatch__button .swatch__link,
+.swatch__button input ~ label {
+  display: block;
+  position: relative;
+  margin: 0;
+  background-color: var(--swatch);
+  overflow: hidden;
+}
+.swatch__button .sibling__link:after,
+.swatch__button input ~ label:after { opacity: 0; }
+.swatch__button .sibling__link--current,
+.swatch__button input:checked ~ label { overflow: initial; }
+.swatch__button .sibling__link--current:after,
+.swatch__button input:checked ~ label:after {
+  opacity: 1;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.swatch__button .sibling__link--sold-out:before,
+.swatch__button input.sold-out ~ label:before,
+.swatch__button input.unavailable ~ label:before,
+.swatch__button input:disabled + label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 1px;
+  background-color: var(--text-dark);
+  transform-origin: left top;
+}
+
+.swatch__button .sibling__link:after,
+.swatch__button input ~ label:after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid var(--swatch);
+  overflow: initial;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.95);
+}
+
+.swatch__button .sibling__link:after {
+  --swatch: var(--primary);
+}
+
+.sibling__link--current {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Prevent tooltip showing up while product quick add drawer is in a loading state */
+.is-loading .sibling__link,
+.is-loading .swatch__button { pointer-events: none; }
+
+/*=== White/Black color swatches ===*/
+.swatch__link[data-swatch="white" i],
+.swatch__button input ~ label[data-swatch="white" i] {
+  --swatch: #FAFAFA;
+  box-shadow: inset 0 0 0 1px var(--border);
+  &::after { border-color: var(--primary); }
+}
+
+.swatch__button input.sold-out ~ label[data-swatch="black" i]:before,
+.swatch__button input.unavailable ~ label[data-swatch="black" i]:before,
+.swatch__button input:disabled ~ label[data-swatch="black" i]:before { background-color: #FFF; }
+
+.swatch__button input.sold-out ~ label[data-swatch="white" i]:before,
+.swatch__button input.unavailable ~ label[data-swatch="white" i]:before,
+.swatch__button input:disabled ~ label[data-swatch="white" i]:before { background-color: var(--border); }
+
+/*=== Circle swatch style ===*/
+.swatch__button--circle .sibling__link,
+.swatch__button--circle .swatch__link,
+.swatch__button--circle input ~ label {
+  width: var(--swatch-size);
+  height: var(--swatch-size);
+  border-radius: 50%;
+  background-color: var(--swatch);
+}
+
+.swatch__button--circle .sibling__link:after,
+.swatch__button--circle input ~ label:after {
+  width: calc(var(--swatch-size) + var(--swatch-outline-offset) * 2);
+  height: calc(var(--swatch-size) + var(--swatch-outline-offset) * 2);
+  border-radius: 50%;
+}
+
+.swatch__button--circle .sibling__link--current:after,
+.swatch__button--circle input:checked ~ label:after {
+  top: calc(var(--swatch-outline-offset) * -1);
+  left: calc(var(--swatch-outline-offset) * -1);
+}
+
+.swatch__button--circle .sibling__link--sold-out:before,
+.swatch__button--circle input.sold-out ~ label:before,
+.swatch__button--circle input.unavailable ~ label:before,
+.swatch__button--circle input:disabled + label:before {
+  height: var(--swatch-size);
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
+
+/*=== Square swatch style ===*/
+
+.swatch__button--square input ~ label,
+.swatch__button--square .sibling__link,
+.swatch__button--square .swatch__link {
+  width: var(--swatch-size);
+  height: var(--swatch-size);
+}
+
+.swatch__button--square .sibling__link:after,
+.swatch__button--square input ~ label:after {
+  top: calc(var(--swatch-outline-offset) * -1);
+  left: calc(var(--swatch-outline-offset) * -1);
+  width: calc(var(--swatch-size) + var(--swatch-outline-offset) * 2);
+}
+.swatch__button--square input ~ label:after,
+.swatch__button--square .sibling__link:after { height: calc(var(--swatch-size) + var(--swatch-outline-offset) * 2); }
+
+.swatch__button--square input:checked ~ label { margin: 0; }
+.swatch__button--square .sibling__link--current {
+  height: calc(var(--swatch-size));
+  width: var(--swatch-size);
+  margin: 0;
+}
+
+.swatch__button--square .sibling__link--sold-out:before,
+.swatch__button--square input.sold-out ~ label:before,
+.swatch__button--square input.unavailable ~ label:before,
+.swatch__button--square input:disabled + label:before {
+  transform: rotate(-45deg) translate(-50%, -50%);
+  height: calc(var(--swatch-size) * 1.375);
+}
+
+.is-focused .swatch__button:focus-within,
+.is-focused .radio__button:focus-within {
+  outline: 5px auto var(--COLOR-PRIMARY);
+}

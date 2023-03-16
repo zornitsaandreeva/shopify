@@ -1,0 +1,66 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "newsletter",
+          "settings": {
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+            "show_name": true
+          }
+        },
+        "footer-1": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "main-menu",
+            "title": ""
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "title": "Contact",
+            "text": "<p>1234 Main Street <br>New York, NY 12345 <br> 123.456.7890<br>help@broadcast.com<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2"
+      ],
+      "settings": {
+        "logo_image_width": 150,
+        "overlay_opacity": 75,
+        "overlay_color": "#ffffff",
+        "footer_secondary_linklist": "",
+        "footer_payment_enable": false,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "type": "currency"
+      }
+    },
+    "popups": {
+      "type": "popups",
+      "blocks": {
+        "popups-0": {
+          "type": "cookie",
+          "settings": {
+            "position": "popup-cookies--left",
+            "show_cookies_popup": true
+          }
+        }
+      },
+      "block_order": [
+        "popups-0"
+      ]
+    }
+  },
+  "order": [
+    "footer",
+    "popups"
+  ]
+}

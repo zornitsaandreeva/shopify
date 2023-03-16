@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection",
+      "settings": {
+      }
+    },
+    "hero": {
+      "type": "collection-image-with-title",
+      "settings": {
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "subcollections",
+    "main"
+  ]
+}

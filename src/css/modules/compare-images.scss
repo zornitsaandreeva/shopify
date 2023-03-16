@@ -1,0 +1,106 @@
+.compare__outer {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.section-before-after .compare__outer {
+  height: 0;
+  padding-top: calc(1 / var(--aspect-ratio) * 100%);
+}
+
+.section-before-after .compare__buttons {
+  margin-top: var(--inner);
+}
+
+@include media-query($medium-up) {
+  .image-height .compare__outer {
+    height: auto;
+    min-height: 100%;
+    padding-top: calc(1 / var(--aspect-ratio) * 100%);
+  }
+
+  .image-height .compare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@include media-query($small) {
+  .image-height--mobile .compare__outer {
+    height: auto;
+    min-height: 100%;
+    padding-top: calc(1 / var(--aspect-ratio) * 100%);
+  }
+
+  .image-height--mobile .compare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.compare__image { 
+  position: relative;
+
+  .no-js & { width: 50% !important; }
+}
+
+.compare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.compare,
+.compare__image {
+  height: 100%;
+  padding: 0;
+}
+
+.compare__image__holder .image-wrapper,
+.compare__image:nth-child(2),
+.compare__image__holder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.compare__image--rotate .image-wrapper { transform: rotate(180deg); }
+
+.compare__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius);
+  margin-top: -25px;
+  background: var(--bg);
+  cursor: move;
+  transition: color .3s ease;
+
+  &:active { color: var(--link-hover); }
+}
+
+.compare__btn .icon {
+  --icon-size: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.no-js .compare__btn { display: none; }

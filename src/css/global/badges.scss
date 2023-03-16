@@ -1,0 +1,9 @@
+.badge {
+  border: none;
+  padding: 3px 6px;
+  background-color: var(--COLOR-BORDER-LIGHT);
+  color: var(--COLOR-TEXT);
+  border-radius: 3px;
+}
+
+.grecaptcha-badge { visibility: hidden; }

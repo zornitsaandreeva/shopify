@@ -1,0 +1,23 @@
+/**
+ * Related
+ */
+.related__wrapper {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.related__products {
+  text-align: center;
+
+  .tab-link,
+  .tab-content { padding: 0; }
+
+  .product-grid:after {
+    @include media-query($medium-up) {
+      content: 'flickity';
+      display: none;
+    }
+  }
+
+  .product-grid.flickity-resize .flickity-slider .product-item { height: 100%; }
+}

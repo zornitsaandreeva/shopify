@@ -1,0 +1,170 @@
+.collections-hover {
+  --header-sticky-height: 0px;
+  --min-height: var(--full-screen);
+
+  position: relative;
+  color: var(--text);
+  background: var(--bg);
+
+  @include media-query($small) {
+    min-height: 0;
+  }
+}
+
+.has-sticky-header .collections-hover {
+  --header-sticky-height: var(--menu-height);
+  --min-height: calc(var(--full-screen) - var(--menu-height));
+}
+
+body:not(.has-sticky-header):not(.has-transparent-header) .main-content > .section-fullscreen:first-of-type .collections-hover {
+  --min-height: calc(var(--full-screen) + var(--header-height));
+}
+
+.has-sticky-header .main-content > .section-fullscreen:first-of-type .collections-hover {
+  --min-height: calc(var(--full-screen) + var(--announcement-height));
+}
+
+.has-sticky-header.has-transparent-header .main-content > .section-fullscreen:first-of-type .collections-hover {
+  --min-height: calc(var(--full-screen) - var(--menu-height) + var(--announcement-height));
+}
+
+.collections-hover--empty {
+  display: block;
+  min-height: 0;
+  color: var(--COLOR-TEXT);
+}
+
+.collections-hover__images,
+.collections-hover__inner {
+  @include media-query($small) { min-height: initial; }
+}
+
+.collections-hover__images {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  @include media-query($medium-up) {
+    display: grid;
+    height: 100%;
+  }
+}
+
+.collections-hover__image {
+  flex: 0 1 100%;
+  display: flex;
+  position: relative;
+  background-color: var(--bg);
+
+  @include media-query($medium-up) {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity .8s $ease-out-fast, transform .8s $ease-out-fast;
+
+    &.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .svg-placeholder,
+  .image-wrapper { 
+    flex: 1;
+    min-height: 100%; 
+  }
+}
+
+.collections-hover__image:not(.image-height--mobile) .image-wrapper {
+  @include media-query($small) {
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.collections-hover:not(.image-height) .collections-hover__image .image-wrapper {
+  @include media-query($medium-up) {
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.collections-hover__image:not(.image-height--mobile) .svg-placeholder {
+  @include media-query($small) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.collections-hover:not(.image-height) .collections-hover__image .svg-placeholder {
+  @include media-query($medium-up) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.collections-hover__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.collections-hover__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: var(--header-sticky-height, 0px);
+  overflow: hidden;
+  min-height: min(var(--min-height), 100%);
+  text-align: center;
+}
+
+[data-overlay-header] .collections-hover__content {
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.collections-hover__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @include media-query($small) {
+    flex-direction: column;
+  }
+}
+
+.collection-hover__button {
+  @include title;
+  display: inline-block;
+  align-self: center;
+  padding: 0;
+  margin: var(--gutter);
+  color: var(--text);
+  opacity: 0.5;
+  transition: opacity .8s $ease-out-fast;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+      color: currentColor;
+    }
+  }
+}
+
+.collection-hover__button.is-selected {
+  opacity: 1;
+  color: currentColor;
+}

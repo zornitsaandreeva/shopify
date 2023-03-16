@@ -1,0 +1,142 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-image-with-title",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "flex_align": "align--middle-left",
+        "bg_color": "",
+        "color": "",
+        "show_image": false,
+        "banner_layout": "overlay",
+        "height": "screen-height-one-third",
+        "mobile_height": "screen-height-one-half--mobile",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "2bf2947a-6619-4640-a198-d10891febdaa": {
+      "type": "section-rich-text",
+      "blocks": {
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-0": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "text_size": 3
+          }
+        },
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-1": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.title }}",
+            "text_size": 8
+          }
+        },
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ collection.metafields.custom.description.value }}<\/p>",
+            "text_size": 4,
+            "text_style": "font-body"
+          }
+        },
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-3": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-0",
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-1",
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-2",
+        "template--14574157004864__2bf2947a-6619-4640-a198-d10891febdaa-167457406149aae720-3"
+      ],
+      "settings": {
+        "width": "wrapper--full-padded",
+        "align_text": "text-center",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 58
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "subcollection_layout": "grid",
+        "subcollection_description": false,
+        "select_image": "collection",
+        "bg_color": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "collection",
+      "blocks": {
+        "5a919665-f301-48d9-9f8c-a8f39e72c675": {
+          "type": "featured_image",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/R-EMEILEGRANDE-G_2018-12-05_01-46-40_LJ5goBEwwC.jpg",
+            "featured_heading": "The Emeile Grande Ring",
+            "featured_text": "<p>Now available in 14K gold<\/p>",
+            "featured_button_text": "",
+            "featured_button_link": "",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--solid",
+            "featured_color_text": "#ffffff",
+            "featured_color_overlay": "#222222",
+            "featured_overlay_opacity": 10
+          }
+        }
+      },
+      "block_order": [
+        "5a919665-f301-48d9-9f8c-a8f39e72c675"
+      ],
+      "settings": {
+        "enable_sort": true,
+        "enable_filters": true,
+        "filter_layout": "inline-open",
+        "collection_linklist": "",
+        "grid": 3,
+        "grid_mobile": "2",
+        "product_limit": 36,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "51bf98bc-e08d-44a8-84e8-ef4f46a57781": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "border_color": "#bcb2a8",
+        "bg_color": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "2bf2947a-6619-4640-a198-d10891febdaa",
+    "subcollections",
+    "main",
+    "51bf98bc-e08d-44a8-84e8-ef4f46a57781"
+  ]
+}

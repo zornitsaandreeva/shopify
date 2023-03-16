@@ -1,0 +1,262 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "breadcrumb"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "tabs": {
+          "type": "tab_richtext",
+          "settings": {
+          }
+        },
+        "divider_1": {
+          "type": "divider",
+          "settings": {
+            "padding_bottom": 16
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+          }
+        },
+        "icon_1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-email",
+            "title": "Free 30 Days Returns"
+          }
+        },
+        "icon_2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-truck",
+            "title": "Free shipping on orders over $100"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variants",
+        "buttons",
+        "pickup",
+        "tabs",
+        "divider_1",
+        "upsell",
+        "icon_1",
+        "icon_2"
+      ],
+      "settings": {
+      }
+    },
+    "faq": {
+      "type": "section-accordion",
+      "blocks": {
+        "faq-1": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "faq-2": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "faq-3": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "faq-4": {
+          "type": "text",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "shipping": {
+      "type": "section-accordion",
+      "blocks": {
+        "shipping-0": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-fast-shipment",
+            "title": "Fast shipping"
+          }
+        },
+        "shipping-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-box",
+            "title": "Order tracking"
+          }
+        },
+        "shipping-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "title": "Get in touch"
+          }
+        }
+      },
+      "block_order": [
+        "shipping-0",
+        "shipping-1",
+        "shipping-2"
+      ],
+      "settings": {
+        "title": "Shipping",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "about": {
+      "type": "section-accordion",
+      "blocks": {
+        "about-0": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "about-1": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "about-2": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "about-0",
+        "about-1",
+        "about-2"
+      ],
+      "settings": {
+        "title": "About us",
+        "padding_top": 0,
+        "padding_bottom": 30
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+      }
+    },
+    "custom": {
+      "type": "section-custom-content",
+      "blocks": {
+        "custom-0": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "description": "",
+            "link_text": ""
+          }
+        },
+        "custom-1": {
+          "type": "text",
+          "settings": {
+            "subheading": "Introducing",
+            "title": "Product feature",
+            "align_text": "text-left",
+            "bg_color": "#f7f7f7",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom-0",
+        "custom-1"
+      ],
+      "settings": {
+        "height": "screen-height-one-half"
+      }
+    },
+    "imgtxt": {
+      "type": "section-custom-content",
+      "blocks": {
+        "imgtxt-0": {
+          "type": "text",
+          "settings": {
+            "subheading": "Introducing",
+            "title": "Another feature",
+            "align_text": "text-left",
+            "bg_color": "#f7f7f7",
+            "button_text": ""
+          }
+        },
+        "imgtxt-1": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "description": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "imgtxt-0",
+        "imgtxt-1"
+      ],
+      "settings": {
+        "height": "screen-height-one-half"
+      }
+    },
+    "related": {
+      "type": "related",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq",
+    "shipping",
+    "about",
+    "reviews",
+    "custom",
+    "imgtxt",
+    "related"
+  ]
+}

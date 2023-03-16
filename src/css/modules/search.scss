@@ -1,0 +1,143 @@
+.search-form {
+  position: relative;
+  display: flex;
+
+  input[type="search"] {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    font-size: calc(1.0rem * var(--FONT-ADJUST-BODY));
+
+    // Make font size at least 16px on mobile devices to prevent page auto zoom in
+    @supports (-webkit-touch-callout: none) {
+      font-size: max(calc(var(--font-2) * var(--FONT-ADJUST-NAV)), 16px);
+    }
+  }
+
+  button[type="reset"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: calc(0.625rem * var(--FONT-ADJUST-BODY));
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+}
+
+.input-holder {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.search-submit {
+  @extend .caps;
+
+  margin: 0;
+  border-radius: 0 var(--RADIUS) var(--RADIUS) 0;
+}
+
+.search-box {
+  border-radius: var(--RADIUS) 0 0 var(--RADIUS);
+}
+
+.search-results-item {
+  position: relative;
+  border: 1px solid var(--COLOR-BORDER);
+  border-left: 0;
+  background: var(--COLOR-BG);
+  margin-top: -1px;
+  scroll-snap-align: start;
+  width: 100%;
+
+  &:before {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    z-index: 10;
+    border-left: 1px solid var(--COLOR-BORDER);
+    content: '';
+  }
+
+  .item-link {
+    display: block;
+    height: 100%;
+    color: var(--COLOR-TEXT);
+  }
+}
+
+.search-results-item__image {
+  display: block;
+  padding-top: var(--PRODUCT-GRID-ASPECT-RATIO);
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--COLOR-A5);
+
+  &:only-child { border-bottom: none; }
+
+  .is-focused & { overflow: visible; }
+
+  &.is-visible {
+    overflow: visible;
+    z-index: 12;
+  }
+
+  .item-link {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .svg-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.search-results-item__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+.item-information {
+  position: relative;
+  z-index: 10;
+  position: relative;
+  text-align: left;
+  line-height: 1.4;
+
+  @include media-query($small) {
+    line-height: 1.2;
+  }
+
+  > a {
+    padding: calc(var(--inner) / 2) var(--inner);
+
+    &.no-events { pointer-events: none; }
+
+    @media (hover: none) and (pointer: coarse) {
+      &.no-events { pointer-events: initial; }
+    }
+
+    @include media-query($small) {
+      padding: 12px;
+    }
+  }
+}

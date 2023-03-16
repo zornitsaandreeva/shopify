@@ -1,0 +1,88 @@
+/* Tooltip Default */
+.tooltip-default {
+  position: absolute;
+  z-index: 7000;
+  top: var(--tooltip-top, 0);
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  // Prevent horizontal scroll on window resize
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+[data-scroll-locked] .tooltip-default { top: calc(var(--tooltip-top, 0) - var(--scroll-top-position)); }
+
+.tooltip-default__inner {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.tooltip-default__arrow {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 1;
+  margin-top: 3px;
+  transition: top 0.2s ease-out;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    clip-path: polygon(0% 0%, 100% 100%, 0 100%);
+    transform: rotate(135deg);
+    content: '';
+  }
+}
+
+.tooltip-default__text {
+  position: relative;
+  top: 8px;
+  margin-top: 10px;
+  background: var(--bg);
+  color: var(--text-dark);
+  padding: 3px 10px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px var(--border);
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  text-align: center;
+  transition: top 0.2s ease-out;
+}
+
+.tooltip-default.is-hiding { opacity: 1 }
+
+.tooltip-default.is-hiding .tooltip-default__arrow,
+.tooltip-default.is-hiding .tooltip-default__text { top: 0; }
+
+.tooltip-default.is-visible {
+  transition: none;
+  animation: tooltip-opacity 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.tooltip-default.is-visible .tooltip-default__arrow,
+.tooltip-default.is-visible .tooltip-default__text {
+  transition: none;
+  animation: tooltip-top 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tooltip-top {
+  from { top: 8px; }
+
+  to { top: 0; }
+}
+
+@keyframes tooltip-opacity {
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+}

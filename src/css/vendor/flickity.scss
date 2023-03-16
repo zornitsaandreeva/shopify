@@ -1,0 +1,277 @@
+/*! Flickity v3.0.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus { outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.is-initialized .flickity-viewport {
+  transition: height 0.3s;
+}
+
+.flickity-slider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.flickity-slider > .flickity-cell { position: absolute; }
+
+/* -- Fixes slide effects with iOS 13+ -- */
+.flickity-viewport {
+  touch-action: pan-y;
+}
+
+.flickity-cell {
+  position: absolute;
+  left: 0;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- flickity-button ---- */
+
+.flickity-button {
+  position: absolute;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+.flickity-button-hide .flickity-button {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.flickity-button:hover {
+  cursor: pointer;
+}
+
+body:not(.is-focused) .flickity-button:focus {
+  outline: none;
+}
+
+.flickity-button:active {
+  opacity: 1;
+}
+
+.flickity-button:disabled {
+  opacity: 0;
+  cursor: auto;
+  visibility: hidden;
+  /* prevent disabled button from capturing pointer up event. #716 */
+  pointer-events: none;
+}
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  --icon-size: 28px;
+  --btn-size: 40px;
+  top: 50%;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  padding: 0;
+  background-color: var(--COLOR-BG);
+  border-radius: var(--RADIUS);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 2%);
+  /* vertically center */
+  margin-top: calc(var(--btn-size) / -2);
+
+  @include media-query($small) {
+    display: none;
+  }
+}
+
+.flickity-prev-next-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60px;
+  z-index: -1;
+  width: calc(100% + 120px);
+  height: 100%;
+  background-color: var(--COLOR-BG-BRIGHTER);
+  opacity: 1;
+  transform: translate3d(-100%,0,0) skew(30deg);
+  transition: transform .5s cubic-bezier(.33,0,0,1);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+@media (hover: hover) {
+  .flickity-prev-next-button {
+    opacity: 0;
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility .2s;
+  }
+  .flickity-prev-next-button.previous { transform: translateX(-100%); }
+  .flickity-prev-next-button.next { transform: translateX(100%); }
+  .flickity-prev-next-button:hover:after { transform: translateZ(0); }
+
+  .flickity-enabled:hover .flickity-prev-next-button.previous:not(:disabled),
+  .flickity-enabled:hover .flickity-prev-next-button.next:not(:disabled),
+  .is-focused .flickity-prev-next-button.previous:not(:disabled):focus,
+  .is-focused .flickity-prev-next-button.next:not(:disabled):focus {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.flickity-prev-next-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: var(--COLOR-TEXT);
+  mask-size: var(--icon-size);
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--RADIUS);
+}
+
+.flickity-prev-next-button { overflow: hidden; }
+.flickity-prev-next-button.previous:before { mask-image: var(--ICON-ARROW-LEFT); }
+.flickity-prev-next-button.next:before { mask-image: var(--ICON-ARROW-RIGHT); }
+
+.flickity-button-icon { display: none; }
+
+.flickity-prev-next-button.previous { left: max(var(--outer), calc(var(--btn-size) / 2)); }
+.flickity-prev-next-button.next { right: max(var(--outer), calc(var(--btn-size) / 2));  }
+
+// Remove transform animation on focus in order to prevent page shifts
+.is-focused .flickity-prev-next-button { transition: opacity .2s ease-in-out; }
+
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: max(var(--outer), calc(var(--btn-size) / 2));
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: max(var(--outer), calc(var(--btn-size) / 2));
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  line-height: 1;
+  display: flex;
+}
+
+.flickity-rtl .flickity-page-dots { direction: rtl; }
+
+.flickity-page-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 5px;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -100%;
+  font-style: normal;
+  overflow: hidden;
+  cursor: pointer;
+}
+.flickity-page-dot:first-child { margin-left: 0; }
+.flickity-page-dot:last-child { margin-right: 0; }
+.flickity-page-dot:only-child { display: none; }
+.flickity-page-dot.is-selected { background: var(--text); }
+
+[data-dots="line"] .flickity-page-dot {
+  width: 40px;
+  height: 2px;
+  border-radius: initial;
+  opacity: .25;
+  background: currentColor;
+}
+[data-dots="line"] .flickity-page-dot.is-selected { opacity: 1; }
+
+/* flickity-fade */
+.flickity-enabled.is-fade .flickity-slider > * {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flickity-enabled.is-fade .flickity-slider > .is-selected {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Flickity Resize */
+.flickity-resize .flickity-slider > * {
+  min-height: 100%;
+}
+
+/* Flickty overwrite */
+.is-fade .flickity-cell {
+  opacity: 0 !important;
+  transition: opacity 0.8s ease;
+}
+.is-fade .flickity-cell.is-selected {
+  opacity: 1 !important;
+}
+
+@include media-query ($medium-up) {
+  [data-slider]:not([data-slider-fullwidth]):not(.flickity-enabled) {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include hide-scrollbar;
+  }
+
+  .product-grid-outer [data-slider]:not([data-slider-fullwidth]):not(.flickity-enabled) {
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+    margin-left: var(--outer-offset);
+    margin-right: var(--outer-offset);
+  }
+}

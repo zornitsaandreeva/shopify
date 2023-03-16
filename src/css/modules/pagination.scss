@@ -1,0 +1,89 @@
+/* ============================================================================
+  #Pagination (Including Shopify Product Reviews)
+============================================================================== */
+.pagination { margin-bottom: 1em; }
+
+/* ================ Custom Pagination ================ */
+
+.pagination-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  margin: var(--outer) auto;
+  width: 100%;
+  font-size: calc(0.875rem * var(--FONT-ADJUST-BODY));
+
+  @include media-query($small) {
+    justify-content: space-around;
+  }
+}
+
+.pagination-custom a {
+  transition: color .3s ease;
+  &:hover,
+  &:focus {
+    color: var(--link-hover);
+  }
+}
+
+.pagination-custom__page {
+  margin: 0 12px;
+  color: var(--text);
+  display: block;
+  padding: 4px 8px;
+  transition: color .3s ease;
+  border-radius: var(--RADIUS);
+}
+
+.pagination-custom__page--active {
+  position: relative;
+  box-shadow: 0 0 0 1px currentColor;
+}
+
+.pagination-custom__inner {
+  display: flex;
+  justify-content: center;
+  margin: 0 32px;
+}
+
+@include media-query($medium-up) {
+  .pagination-custom__prev,
+  .pagination-custom__next {
+    padding: 5px;
+    display: inline-block;
+  }
+}
+
+@include media-query($small-up) {
+  .pagination-custom__prev .icon,
+  .pagination-custom__next .icon { display: none; }
+}
+
+@include media-query($small) {
+  .pagination-custom__page { margin: 8px; }
+  .pagination-custom__sep { margin: 8px 2px; }
+
+  .pagination-custom__prev,
+  .pagination-custom__next {
+    display: flex;
+    flex: 1 0 0;
+    margin: 0;
+  }
+
+  .pagination-custom__prev { justify-content: flex-start; }
+  .pagination-custom__next { justify-content: flex-end; }
+
+  .pagination-custom__inner {
+    flex-grow: 0;
+    margin: 0 10px;
+  }
+}
+
+@include media-query($mobile) {
+  .pagination-custom__prev,
+  .pagination-custom__next {
+    margin: 0 -4px;
+    span { display: none; }
+  }
+}

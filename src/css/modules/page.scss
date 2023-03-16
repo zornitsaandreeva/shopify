@@ -1,0 +1,91 @@
+/**
+ * Pages
+ */
+
+.index-page {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.page,
+body .shopify-policy__container {
+  position: relative;
+  text-align: left;
+  margin: 60px auto;
+  max-width: 670px;
+  padding: 0px 30px;
+}
+
+.page .giftcard__wrap img { margin: auto; }
+
+.page-fullwidth { max-width: 100%; }
+
+.page img,
+.page iframe,
+.shopify-policy__container img,
+.shopify-policy__container iframe { max-width: 100%; }
+
+.page:not(.search-page) img,
+.shopify-policy__container img { height: auto; }
+
+//Titles and legal titles
+.page__title,
+.shopify-policy__title h1 {
+  font-size: calc(var(--font-7) * var(--FONT-ADJUST-HEADING));
+  text-align: center;
+  margin: 0 0 var(--gutter);
+}
+
+// GIFT CARD
+.gift-card-footer { text-align: center; }
+
+#QrCode {
+  padding: 10px 0 20px;
+
+  img { display: inline-block !important; }
+}
+
+// PAGE SEARCH
+.search-page {
+  margin: 0 auto;
+  padding: var(--padding-top) 0 var(--padding-bottom);
+  max-width: 100%;
+}
+
+.search-outer {
+  max-width: 700px;
+  padding: 0 var(--outer);
+  margin: 0 auto var(--outer);
+}
+
+.search__caption {
+  text-align: center;
+  padding: 15px var(--outer);
+  margin: 0 0 -1px; // Prevent double border
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-transform: none;
+}
+
+//ReCaptcha challenge text alignment fix
+.shopify-challenge__errors ul.shopify-challenge__error {
+  text-align: center;
+  margin: 0;
+}
+
+/* ================ Newsletter double opt in  ================ */
+body .shopify-email-marketing-confirmation__container { text-align: center; }
+
+body .shopify-email-marketing-confirmation__container h1 {
+  font-size: calc(var(--font-8) * var(--FONT-ADJUST-HEADING));
+  margin-bottom: 60px;
+}
+
+body .shopify-email-marketing-confirmation__container p { font-size: calc(var(--font-5) * var(--FONT-ADJUST-BODY)); }
+
+body .shopify-email-marketing-confirmation__container a {
+  display: block;
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  text-decoration: underline;
+  margin-top: 50px;
+}

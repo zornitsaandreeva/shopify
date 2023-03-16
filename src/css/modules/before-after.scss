@@ -1,0 +1,41 @@
+.section-before-after {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.compare__body {
+  @include media-query($medium-up) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.compare__content {
+  @include media-query($medium-up) {
+    flex: 0 0 50%;
+    align-self: center;
+    padding-right: var(--outer);
+  }
+}
+
+.wrapper--full .compare__content {
+  padding-left: var(--outer);
+
+  @include media-query($small) {
+    padding-right: var(--outer);
+  }
+}
+
+.wrapper--full .compare__buttons {
+  @include media-query($small) {
+    padding: 0 var(--outer);
+  }
+}
+
+.compare__images {
+  overflow: hidden;
+
+  @include media-query($medium-up) {
+    flex: 0 0 50%;
+  }
+}

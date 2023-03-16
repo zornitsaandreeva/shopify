@@ -1,0 +1,81 @@
+.pickup__preview {
+  margin: 0;
+  
+  p { margin: 0 0 6px 0; }
+}
+
+.pickup__info__timing,
+.pickup__preview--primary button.pickup__button { font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY)); }
+
+.pickup__preview--primary {
+  display: flex;
+  align-items: flex-start;
+
+  button.pickup__button {
+    &:focus,
+    &:active { transform: none; }
+  }
+}
+
+.pickup__list__item .icon,
+.pickup__preview .icon {
+  --icon-size: 20px;
+  margin: -1px 6px 0 -4px;
+  height: calc(calc(0.875rem * var(--FONT-ADJUST-BODY) * 1.5)); // Calculate title line-height and set as icon height in order to center it vertically
+}
+.pickup__preview .icon path,
+.pickup__list__item .icon path { fill: none; }
+.pickup__preview .icon-check,
+.pickup__list__item .icon-check { color: var(--success); }
+.pickup__preview .icon-cancel,
+.pickup__list__item .icon-cancel { color: var(--error); }
+
+.pickup__address {
+  font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY));
+  font-style: normal;
+  margin: 8px 0 0 0;
+}
+
+.pickup__product__wrap {
+  padding: var(--inner);
+  border-bottom: 1px solid var(--border);
+}
+
+.pickup__product__title {
+  @include body-bold;
+  font-size: calc(var(--font-4) * var(--FONT-ADJUST-BODY));
+  margin: 0;
+}
+
+.pickup__variant {
+  font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY));
+  margin: 12px 0 0 0;
+}
+.pickup__variant .text-light { color: var(--text-light); }
+.pickup__variant .divide {
+  color: var(--text-light);
+  opacity: 0.5;
+  padding: 0 1px;
+}
+.pickup__variant .badge {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+}
+
+.pickup__list {
+  padding: var(--inner);
+  margin: 0;
+  list-style: none;
+}
+
+.pickup__list__item {
+  margin-bottom: 32px;
+  p { margin: 2px 0; }
+  p.small { margin-top: 8px; }
+}
+
+.pickup__list__item + .pickup__list__item {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--bg-accent);
+}

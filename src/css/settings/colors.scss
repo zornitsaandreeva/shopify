@@ -1,0 +1,73 @@
+/* ============================================================================
+  #Colors
+
+  --STATIC vars have uppercase letters
+  --dynamic vars have lowercase letters
+
+  A static var is set in theme settings and doesn't change in any context
+  A dynamic var is context dependent and can be overwritten by its wrapper
+
+  This file is primarily concerned with setting the values of dynamic color
+  variables depending on which container the text or background is inside.
+============================================================================== */
+
+
+:root {
+  --bg: var(--COLOR-BG);
+  --bg-accent: var(--COLOR-BG-SECONDARY);
+
+  --text-dark: var(--COLOR-TEXT-DARK);
+  --text: var(--COLOR-TEXT);
+  --text-light: var(--COLOR-TEXT-LIGHT);
+  --text-a35: var(--COLOR-A35);
+  --text-a70: var(--COLOR-A70);
+  --text-a75: var(--COLOR-A75);
+
+  --text-black: #000;
+  --text-white: #FFF;
+
+  --link: var(--COLOR-LINK);
+  --link-hover: var(--COLOR-LINK-HOVER);
+
+  --border: var(--COLOR-BORDER);
+  --hairline: var(--COLOR-BORDER-HAIRLINE);
+
+  --sale-bg: var(--COLOR-SALE-BG);
+  --sale-text: var(--COLOR-SALE-TEXT);
+  --sale-text-secondary: var(--COLOR-SALE-TEXT-SECONDARY);
+
+  --contrast: #000;
+  --primary: var(--COLOR-PRIMARY);
+  --primary-hover: var(--COLOR-PRIMARY-HOVER);
+  --primary-fade: var(--COLOR-PRIMARY-FADE);
+  --primary-light: var(--COLOR-PRIMARY-LIGHT);
+  --primary-opposite: var(--COLOR-PRIMARY-OPPOSITE);
+
+  --success: #56AD6A;
+  --success-bg: rgba(86, 173, 106, 0.2);
+  --error: var(--COLOR-ERROR);
+  --error-bg: var(--COLOR-ERROR-BG);
+
+  --header-overlay-color: transparent;
+}
+
+
+
+.palette--contrast {
+  --text: #000;
+  --text-light: #000;
+  --text-dark: #000;
+  --bg: #FFF;
+}
+.palette--primary {
+  --text: var(--COLOR-PRIMARY);
+  --text-light: var(--COLOR-PRIMARY);
+  --text-dark: var(--COLOR-PRIMARY);
+  --bg: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.palette--contrast--dark {
+  --text: #FFF;
+  --text-light: #FFF;
+  --text-dark: #F7F7F7;
+  --bg: #000;
+}

@@ -1,0 +1,59 @@
+/**
+ * Icons
+ */
+
+.icon {
+  display: inline-block;
+  width: var(--icon-size, 20px);
+  height: var(--icon-size, 20px);
+  vertical-align: middle;
+  fill: none;
+  stroke-width: var(--ICON-STROKE-WIDTH);
+  stroke: currentColor;
+
+  path { stroke-width: inherit; }
+
+  .no-svg & { display: none; }
+
+  circle,
+  ellipse,
+  g,
+  line,
+  path,
+  polygon,
+  polyline,
+  rect {
+    fill: inherit;
+    stroke: inherit;
+  }
+}
+
+.icon-arrow-right { transition: transform .25s ease-out; }
+
+.icon-media-video path,
+.icon-media-model path { fill: none; }
+.icon-media-video .icon-media-video-outline,
+.icon-media-model .icon-media-model-outline { fill: var(--bg); opacity: 0.6; }
+.icon-media-video .icon-media-video-element,
+.icon-media-model .icon-media-model-element { fill: currentColor; }
+
+.icon-cancel { pointer-events: none; }
+
+/*============================================================================
+  A generic way to visually hide content while
+  remaining accessible to screen readers (h5bp.com)
+==============================================================================*/
+.icon-fallback-text {
+  @include visually-hidden();
+
+  .no-svg & {
+    @include visually-shown(static);
+  }
+}
+
+/*================ Payment Icons ================*/
+
+.payment-icons {
+  @include prefix('user-select', none, moz ms webkit spec);
+  cursor: default;
+}

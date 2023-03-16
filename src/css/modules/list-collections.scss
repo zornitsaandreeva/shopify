@@ -1,0 +1,81 @@
+/**
+ * List Collections Page
+ */
+
+.collection-block__wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-block {
+  display: flex;
+  align-items: center;
+  min-height: 50vw;
+  background: var(--COLOR-BG-SECONDARY);
+
+  @include media-query( $medium ) {
+    min-height: 400px;
+  }
+
+  @include media-query( $large ) {
+    min-height: 500px;
+  }
+
+  @include media-query( $widescreen ) {
+    min-height: 600px;
+  }
+
+  @include media-query($small) {
+    flex-direction: column;
+  }
+}
+
+.collection-block__content {
+  height: 100%;
+  width: 50%;
+  text-align: left;
+  padding: 104px;
+
+  @include media-query( $large-down ) {
+    padding: 60px;
+  }
+
+  @include media-query($small) {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+.collection-block__button { margin-top: 10px; }
+
+.collection-block__image {
+  align-self: stretch;
+  position: relative;
+  width: 50%;
+
+  @include media-query($small) {
+    width: 100%;
+    height: 50vw;
+    margin: 30px auto 0 auto;
+  }
+}
+
+.collection-block__image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.collection-block__products {
+  width: 50%;
+
+  @include media-query( $medium-up ) {
+    display: flex;
+  }
+
+  .product-item { width: 50%; }
+}

@@ -1,0 +1,126 @@
+.drawer--header {
+  --bg: var(--COLOR-SUBMENU-BG);
+  --text: var(--COLOR-SUBMENU-LINK);
+  --text-dark: var(--COLOR-SUBMENU-LINK);
+  --text-light: var(--COLOR-SUBMENU-LINK);
+  --link-hover: var(--COLOR-SUBMENU-LINK-HOVER);
+
+  position: relative;
+  z-index: 5600;
+  color: var(--text);
+
+  &.caps { letter-spacing: 0.1em; }
+
+  .drawer__inner {
+    transform: translate3d(0, 0, 0);
+    left: auto;
+    right: 100%;
+    border-left: 0;
+    border-right: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 3px 12px rgba(0,0,0,0.02);
+
+    @include media-query($small) {
+      border-right: none;
+    }
+  }
+
+  &.is-open .drawer__inner {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .drawer__head {
+    border: 0;
+  }
+
+  .drawer__close {
+    --icon-size: 24px;
+    position: relative;
+    left: -10px;
+    right: auto;
+  }
+
+  .drawer__underlay { z-index: 2400; }
+
+  .drawer__content {
+    --item-height: 50px;
+
+    position: relative;
+    flex: 1;
+    display: flex;
+    min-height: var(--item-height);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .drawer__bottom__row {
+    --min-height: 30px;
+    --padding: 10px;
+
+    flex: 0 1 100%;
+    width: 100%;
+    min-height: calc(var(--min-height) + (var(--padding) * 2));
+    padding: var(--padding) 0;
+  }
+
+  .drawer__bottom__row > *:only-child { 
+    flex-wrap: wrap;
+    min-height: var(--min-height);
+    height: auto;
+  }
+
+  .drawer__search { border-bottom: 1px solid var(--border); }
+
+  .drawer__bottom {
+    position: relative;
+
+    &:before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 20px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
+
+    .social__links {
+      --icon-size: 20px;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--icon-size), 1fr));
+      gap: 10px;
+      width: 100%;
+      margin: 0 0 0 -1px; // margin-left: -1px to compensate the SVG icon path 1px offset
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+      a { transition: color 0.25s $ease-out-fast; }
+    }
+  }
+
+  .drawer__bottom {
+    position: relative;
+    z-index: 11;
+    width: 100%;
+    min-height: 51px;
+    padding: var(--outer);
+    margin-top: auto;
+
+    @include media-query($medium-up) {
+      padding: calc(var(--outer) / 2) var(--inner);
+    }
+  }
+
+  .has-borders-header & {
+    // Collapse border with drawer bottom and remove the last border when the drawer__bottom is hidden
+    .drawer__content { margin-bottom: -1px; }
+    .drawer__bottom { border-top: 1px solid var(--border); }
+  }
+}

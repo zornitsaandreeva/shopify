@@ -1,0 +1,319 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "232ddda2-39d5-490b-b3af-7a9de6f995d3": {
+      "type": "section-double",
+      "blocks": {
+        "template--14574156742720__232ddda2-39d5-490b-b3af-7a9de6f995d3-1674326374756b4e02-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Promise",
+            "text_size": 7
+          }
+        },
+        "template--14574156742720__232ddda2-39d5-490b-b3af-7a9de6f995d3-1674326374756b4e02-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are committed to quality products that are manufactured ethically and sustainably. All of our pieces are traceable throughout the supply chain. We strive to ensure our products contribute to the well-being of people and planet, and our efforts put us on track towards a brighter future.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156742720__232ddda2-39d5-490b-b3af-7a9de6f995d3-1674326374756b4e02-0",
+        "template--14574156742720__232ddda2-39d5-490b-b3af-7a9de6f995d3-1674326374756b4e02-1"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/broadcast-chelsea-4.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "99389843-ed13-49e6-b6cc-6b2f9164b453": {
+      "type": "section-columns",
+      "blocks": {
+        "7fac03ea-1752-4efa-a7e8-7e197a0079b6": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/pexels-pnw-production-9218400.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "Quality & Care",
+            "text": "<p>Most of the jewelry is 14k gold filled, sterling silver, or rose gold filled. The best jewelry is always well-cared for. Knowing the best ways to maintain your jewelry can keep your precious pieces looking great for life.<\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_style": "btn--solid"
+          }
+        },
+        "f8ca8e1a-ef6e-42f8-9cd9-3a565919fc16": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/pexels-mathilde-langevin-10897815_f781679a-9f12-45e6-8ac1-eb4027a9134b.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "Giving Back",
+            "text": "<p>1% of all of our profits are donated to the ATC foundation to combat deforestation. We do our part by using non-harmful, compostable packaging materials. All of our ingredients are naturally sourced and biodegradable.<\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_style": "btn--solid"
+          }
+        },
+        "a274e7dd-8976-4a04-8411-d53c296e7336": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify:\/\/shop_images\/halcyon-ring-gold-rings-alohas-571560.jpg",
+            "image_aspect_ratio": 1.2,
+            "title": "Community Oriented",
+            "text": "<p>We partner with various organizations in our areas that support creative endeavours for underrepresented communities and arts & crafts programs for youth and children. We want to help people pursue their creativity!<\/p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "7fac03ea-1752-4efa-a7e8-7e197a0079b6",
+        "f8ca8e1a-ef6e-42f8-9cd9-3a565919fc16",
+        "a274e7dd-8976-4a04-8411-d53c296e7336"
+      ],
+      "settings": {
+        "title": "Commitments",
+        "align_text": "text-center",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "layout_mobile": "carousel"
+      }
+    },
+    "82cbfd05-a212-48c3-b431-d56a602e83b8": {
+      "type": "section-double",
+      "blocks": {
+        "template--14574156742720__82cbfd05-a212-48c3-b431-d56a602e83b8-1674326374756b4e02-0": {
+          "type": "heading",
+          "settings": {
+            "title": "From our Founder",
+            "text_size": 7
+          }
+        },
+        "template--14574156742720__82cbfd05-a212-48c3-b431-d56a602e83b8-1674326374756b4e02-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I wanted to create beautiful, unique pieces that were accessible to everyone. I believe that jewelry should be an expression of your individual style and personality, and I'm passionate about helping people find the perfect piece to express themselves. I'm also committed to offering high-quality, affordable jewelry that is ethically and sustainably produced.<\/p>",
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156742720__82cbfd05-a212-48c3-b431-d56a602e83b8-1674326374756b4e02-0",
+        "template--14574156742720__82cbfd05-a212-48c3-b431-d56a602e83b8-1674326374756b4e02-1"
+      ],
+      "settings": {
+        "layout": "",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/8dea396f2da3534201f51e2be887d33f-xxlarge.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "74c37aab-ce8b-4bca-b6f6-abd0e65a7916": {
+      "type": "section-announcement",
+      "blocks": {
+        "template--14574156742720__74c37aab-ce8b-4bca-b6f6-abd0e65a7916-16743269785e4ddc7d-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Express yourself in your own way<\/p>",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156742720__74c37aab-ce8b-4bca-b6f6-abd0e65a7916-16743269785e4ddc7d-0"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "slider_speed": 7,
+        "marquee_speed": 100,
+        "bg_color": "#f5f2ec",
+        "color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "03b47870-3be6-476e-96a5-96e8a85e4b6c": {
+      "type": "section-collections-list",
+      "blocks": {
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "all",
+            "collection_image": "shopify:\/\/shop_images\/trilogy-hoop-earrings-gold-earrings-alohas-973375_900x_jpg.webp",
+            "title": ""
+          }
+        },
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklaces",
+            "collection_image": "shopify:\/\/shop_images\/1500280.jpg",
+            "title": ""
+          }
+        },
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "collection_image": "shopify:\/\/shop_images\/E-OPHELIA-S-2.jpg",
+            "title": ""
+          }
+        },
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "rings",
+            "collection_image": "shopify:\/\/shop_images\/R-EMEILEGRANDE-G_2_2018-12-05_01-46-40_0dIlF2LE9x.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-0",
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-1",
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-2",
+        "template--14574156742720__03b47870-3be6-476e-96a5-96e8a85e4b6c-167432704322ead5a2-3"
+      ],
+      "settings": {
+        "title": "",
+        "description": "",
+        "layout": "grid",
+        "aspect_ratio": 1.2,
+        "enable_slider": true,
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 32
+      }
+    },
+    "8ba36439-aa99-4326-9414-58e6d2ecc955": {
+      "type": "section-press-logos",
+      "blocks": {
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-0": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/vanity_fair-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-1": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/marie_claire-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-2": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/vogue-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        },
+        "3ee4fd03-e70e-4d69-aa6d-792fe68b87ea": {
+          "type": "logo-item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/allure-logo.png",
+            "logo_width": 150,
+            "link": "",
+            "description": "<p>Include a brief quote from a brand that loves your products<\/p>",
+            "heading_size": 6
+          }
+        }
+      },
+      "block_order": [
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-0",
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-1",
+        "template--14574156742720__8ba36439-aa99-4326-9414-58e6d2ecc955-1674327159424d2f53-2",
+        "3ee4fd03-e70e-4d69-aa6d-792fe68b87ea"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "enable_heading_slider": false,
+        "logo_opacity": 60,
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "ca5b46a7-bbc3-4c1f-b45f-01bac3a6b42a": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "border_color": "",
+        "bg_color": "",
+        "padding_top": 31,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "232ddda2-39d5-490b-b3af-7a9de6f995d3",
+    "99389843-ed13-49e6-b6cc-6b2f9164b453",
+    "82cbfd05-a212-48c3-b431-d56a602e83b8",
+    "74c37aab-ce8b-4bca-b6f6-abd0e65a7916",
+    "03b47870-3be6-476e-96a5-96e8a85e4b6c",
+    "8ba36439-aa99-4326-9414-58e6d2ecc955",
+    "ca5b46a7-bbc3-4c1f-b45f-01bac3a6b42a"
+  ]
+}

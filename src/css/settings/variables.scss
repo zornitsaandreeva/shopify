@@ -1,0 +1,55 @@
+$move_offset: 50px;
+
+// ================ Transition curves ================
+$ease-out-fast: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+==============================================================================*/
+$grid-mobile: 480px;
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1400px;
+$grid-gutter: 30px;
+
+$mobile: 'mobile';
+$small-up: 'small-up';
+
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+// The `$breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+$breakpoints: ($mobile '(max-width: #{$grid-mobile - 1})',
+$small '(max-width: #{$grid-medium - 1})',
+$small-up '(min-width: #{$grid-mobile})',
+$medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+$medium-down '(max-width: #{$grid-large - 1})',
+$medium-up '(min-width: #{$grid-medium})',
+$large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+$large-down '(max-width: #{$grid-widescreen - 1})',
+$large-up '(min-width: #{$grid-large})',
+$widescreen '(min-width: #{$grid-widescreen})'
+);
+
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+$breakpoint-has-widths: ($small, $medium, $medium-up, $medium-down, $large, $large-down, $large-up, $large-down, $widescreen);
+$breakpoint-has-push: ($small, $medium, $medium-up, $medium-down, $large, $large-down, $large-up, $large-down, $widescreen);

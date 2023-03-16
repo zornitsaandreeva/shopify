@@ -1,0 +1,277 @@
+.announcement__wrapper {
+  --icon-offset: 0.2;
+  --icon-size: max(calc(var(--text-size) * var(--FONT-ADJUST-BODY)), calc(var(--font-4) * var(--FONT-ADJUST-BODY)));
+  --btn-size: var(--icon-size);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.announcement__wrapper .flickity-prev-next-button {
+  --icon-size: inherit;
+  --btn-size: inherit;
+  display: block;
+  background-color: transparent;
+  overflow: unset;
+  box-shadow: none;
+  z-index: 2;
+
+  &::after { content: none; }
+  &::before { background-color: var(--text); }
+}
+
+.announcement__wrapper .flickity-prev-next-button.previous { left: calc(var(--outer) - var(--icon-offset) * var(--icon-size)); }
+.announcement__wrapper .flickity-prev-next-button.next { right: calc(var(--outer) - var(--icon-offset) * var(--icon-size)); }
+
+.announcement__wrapper--top { z-index: 5500; }
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+// Prevent CLS when JS is enabled but not loaded yet
+.js .announcement__bar-holder:not(.flickity-enabled) .announcement__bar ~ .announcement__bar { display: none; }
+
+.announcement__bar .flickity-slider {
+  display: flex;
+  align-items: center;
+}
+
+.announcement__slide { min-height: 45px; }
+.announcement__slide:not(.announcement__bar) { white-space: nowrap; }
+.announcement__slide:not(.announcement__bar) > *,
+.announcement__slide:not(.announcement__bar):before {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.announcement__slide:not(.announcement__bar):before {
+  min-height: 45px;
+  width: 0;
+  content: '';
+}
+
+.announcement__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--text);
+}
+.announcement__bar:not(.desktop):not(.mobile) { width: 100%; }
+.announcement__bar.desktop {
+  width: 100%;
+
+  @include media-query($small) {
+    display: none;
+  }
+}
+
+.announcement__bar.mobile {
+  @include media-query($medium-up) {
+    display: none;
+    width: 0;
+  }
+  @include media-query($small) {
+    width: 100%;
+  }
+}
+
+.announcement__bar .icon { fill: currentColor; }
+
+.announcement__bar--error { display: none; }
+
+.announcement__main {
+  @include body-bold;
+}
+
+.announcement__text {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.announcement__text p {
+  font-size: inherit;
+  margin: 0;
+}
+
+.announcement__text > div {
+  display: inline-block;
+  margin: 0 50px;
+  vertical-align: middle;
+}
+
+.announcement__text > .mobile {
+  @include media-query($medium-up) {
+    display: none;
+  }
+}
+
+.announcement__text > .desktop {
+  @include media-query($small) {
+    display: none;
+  }
+}
+
+.announcement__text a {
+  position: relative;
+  display: inline-block;
+}
+
+.announcement__text .free-shipping {
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  white-space: nowrap;
+  position: relative;
+}
+
+.announcement__text .free-shipping circle + circle { stroke: currentColor; }
+
+.announcement__text,
+.announcement__main {
+  font-size: var(--text-size, calc(0.8rem * var(--FONT-ADJUST-BODY)));
+}
+
+.announcement__divider {
+  margin-left: 10px;
+  padding-right: 10px;
+  width: 0;
+  border-left: 1px solid currentColor;
+  height: 10%;
+}
+
+.announcement__message {
+  overflow: hidden;
+  width: 100%;
+  padding: 0 45px;
+  font-size: 0;
+
+  @include media-query($small) {
+    padding: 0 25px;
+  }
+}
+
+.announcement__scale {
+  display: inline-flex;
+  transition: opacity 0.5s linear;
+}
+
+.announcement__scale.ticker--unloaded {
+  width: max-content;
+}
+
+.announcement__bar-holder--slider.flickity-enabled .announcement__scale.ticker--unloaded { position: static; }
+
+html:not(.js) .announcement__scale.ticker--unloaded {
+  opacity: 1;
+  position: static;
+  width: auto;
+}
+
+.ticker--animated {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: var(--animation-time);
+  animation-play-state: paused;
+  display: inline-block;
+  width: max-content;
+  will-change: transform, padding, width;
+
+  &:hover { animation-play-state: paused; }
+}
+
+.ticker--animated .announcement__slide {
+  @include media-query($medium-up) {
+    margin: 0 100px;
+  }
+}
+
+.announcement__bar-holder {
+  .flickity-slider {
+    display: flex;
+    align-items: center;
+  }
+
+  // make clickable area larger
+  .flickity-prev-next-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    background: transparent;
+  }
+}
+
+.announcement__bar-holder--slider { background-color: var(--bg); }
+
+.announcement__bar-holder--arrows {
+  .flickity-viewport {
+    --arrows-space: calc(var(--outer) + var(--icon-size));
+    --arrows-space-offset: calc(var(--arrows-space) * -1);
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      width: calc(var(--arrows-space) + 20px);
+      pointer-events: none;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &::before {
+      left: var(--arrows-space-offset);
+      background: linear-gradient(90deg, var(--bg) 80%, transparent 100%);
+    }
+    &::after {
+      right: var(--arrows-space-offset);
+      background: linear-gradient(-90deg, var(--bg) 80%, transparent 100%);
+    }
+  }
+
+  .flickity-prev-next-button { z-index: 2; }
+}
+
+.announcement__bar-holder--arrows:hover .flickity-viewport:before { transform: translateX(var(--arrows-space)); }
+.announcement__bar-holder--arrows:hover .flickity-viewport:after { transform: translateX(var(--arrows-space-offset)); }
+
+.supports-touch .announcement__bar-holder--arrows {
+  .flickity-viewport:before { transform: translateX(var(--arrows-space)); }
+  .flickity-viewport:after { transform: translateX(var(--arrows-space-offset)); }
+}
+
+.no-js .announcement__bar-holder--slider .announcement__bar {
+  top: 0;
+  transform: none;
+}
+.announcement__bar-holder > .announcement__bar:hover .ticker--animated,
+.announcement__bar:hover .ticker--animated,
+.announcement__bar-holder > .announcement__bar [data-stop] .ticker--animated { animation-play-state: paused; }
+
+.announcement__bar-holder > .announcement__bar .ticker--animated,
+.is-selected .ticker--animated { animation-play-state: running; }
+
+.ticker__comparitor {
+  position: absolute;
+  transform: translatey(-5000px);
+  visibility: hidden;
+}
+
+.ie .announcement__bar--error {
+  display: block;
+  height: auto;
+  padding: 15px;
+}

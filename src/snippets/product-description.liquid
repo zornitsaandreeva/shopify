@@ -1,0 +1,24 @@
+{%- if product_api -%}
+  <div class="product__block"
+    {% if animation_name %}
+      data-animation="{{ animation_name }}"
+      data-animation-duration="{{ animation_duration }}"
+      data-animation-delay="{{ animation_delay }}"
+    {% endif %}>
+    <div class="product-quick-add__description rte">
+      {{ product.description | strip_html | truncatewords: 30, '...' }}
+    </div>
+  </div>
+{%- else -%}
+  {%- if block.settings.style == 'inline' -%}
+    <div class="product__block product__description rte" {{ block.shopify_attributes }}>
+      {%- if product.description != blank -%}
+        [% render 'partials/inline-product-description' %]
+      {%- endif -%}
+    </div>
+  {%- else -%}
+    <div class="product__block product__tabs tabs-wrapper product-tabs-wrapper{% if block.settings.style == 'tabs' %} product-tabs-wrapper--tabs{% elsif block.settings.style == 'accordions' %} product-tabs-wrapper--accordion{% endif %}" {{ block.shopify_attributes }} {{ block_style }}>
+      {%- render 'product-tabs', product: product, block: block -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}

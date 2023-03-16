@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "double-1": {
+      "type": "section-double",
+      "blocks": {
+        "heading-1-1": {
+          "type": "heading",
+          "settings": {
+            "text_size": 7
+          }
+        },
+        "text-1-1": {
+          "type": "text",
+          "settings": {
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "heading-1-1",
+        "text-1-1"
+      ],
+      "settings": {
+        "layout": "is-reversed",
+        "height": "sixty-fifty-height-hero-min--desktop",
+        "mobile_height": "four-fifty-height-hero-min--mobile",
+        "width": "wrapper--full",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "columns": {
+      "type": "section-columns",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image_aspect_ratio": 1.2,
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary hero__btn",
+            "button_style": "btn--solid"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image_aspect_ratio": 1.2,
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary hero__btn",
+            "button_style": "btn--solid"
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image_aspect_ratio": 1.2,
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary hero__btn",
+            "button_style": "btn--solid"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2",
+        "image-3"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "layout_mobile": "carousel"
+      }
+    },
+    "double-2": {
+      "type": "section-double",
+      "blocks": {
+        "heading-2-1": {
+          "type": "heading",
+          "settings": {
+            "text_size": 7
+          }
+        },
+        "text-2-1": {
+          "type": "text",
+          "settings": {
+            "text_size": 3,
+            "text_style": "font-body"
+          }
+        }
+      },
+      "block_order": [
+        "heading-2-1",
+        "text-2-1"
+      ],
+      "settings": {
+        "height": "sixty-fifty-height-hero-min--desktop",
+        "mobile_height": "four-fifty-height-hero-min--mobile",
+        "width": "wrapper--full",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "announcement": {
+      "type": "section-announcement",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "slider_speed": 7,
+        "marquee_speed": 100,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collections-list": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection"
+        },
+        "collection-2": {
+          "type": "collection"
+        },
+        "collection-3": {
+          "type": "collection"
+        },
+        "collection-4": {
+          "type": "collection"
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "collection-4"
+      ],
+      "settings": {
+        "title": "",
+        "layout": "grid",
+        "aspect_ratio": 1.2,
+        "enable_slider": true,
+        "padding_top": 50,
+        "padding_bottom": 32
+      }
+    },
+    "press-logos": {
+      "type": "section-press-logos",
+      "blocks": {
+        "logo-item-1": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 150,
+            "link": "",
+            "heading_size": 6
+          }
+        },
+        "logo-item-2": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 150,
+            "link": "",
+            "heading_size": 6
+          }
+        },
+        "logo-item-3": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 150,
+            "link": "",
+            "heading_size": 6
+          }
+        },
+        "logo-item-4": {
+          "type": "logo-item",
+          "settings": {
+            "logo_width": 150,
+            "link": "",
+            "heading_size": 6
+          }
+        }
+      },
+      "block_order": [
+        "logo-item-1",
+        "logo-item-2",
+        "logo-item-3",
+        "logo-item-4"
+      ],
+      "settings": {
+        "enable_heading_slider": false,
+        "logo_opacity": 60,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "divider": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 31,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "double-1",
+    "columns",
+    "double-2",
+    "announcement",
+    "collections-list",
+    "press-logos",
+    "divider"
+  ]
+}

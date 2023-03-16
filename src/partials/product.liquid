@@ -1,0 +1,214 @@
+<!-- /snippets/product.liquid -->
+
+{% comment %}
+    Renders product content
+
+    Accepts:
+    - product: {Object} Current product (required)
+    - section: {Object} Image to render (required)
+
+{% endcomment %}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign unique = unique | default: ''
+  assign enable_video_looping = section.settings.enable_video_looping
+  assign image_size = section.settings.image_size
+  assign image_layout = section.settings.image_layout
+  assign featured_media = current_variant.featured_media | default: product.featured_media
+  assign featured_media_aspect_ratio = featured_media.aspect_ratio | default: 1
+  assign is_title_linked = true
+  if template.name == 'product'
+    assign is_title_linked = false
+  endif
+
+  assign modifier = image_layout | default: 'thumbnails'
+  assign product_wrapper_modifier = 'product__wrapper--' | append: modifier
+
+  assign show_buy_buttons = false
+  assign buy_buttons = section.blocks | where: 'type', 'buttons'
+
+
+  if buy_buttons.size > 0
+    assign show_buy_buttons = true
+  endif
+
+  assign image_width = 770
+
+  if image_size == 'small'
+    assign product_wrapper_modifier = product_wrapper_modifier | append: ' product__wrapper--small'
+    assign image_width = 525
+  endif
+
+  if image_size == 'stretch'
+    assign product_wrapper_modifier = product_wrapper_modifier | append: ' product__wrapper--stretch'
+    assign image_width = 970
+  endif
+
+  assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id
+-%}
+
+<div class="product__wrapper {{ product_wrapper_modifier }}" data-product>
+  <div class="product__wrapper__inner">
+    <div class="product__page">
+      <div class="product__images{% if section.settings.mobile_image_style == 'slider' %} product__images--no-thumbs{% else %} product__images--has-thumbs{% endif %}">
+        {%- if product.media.size > 0 -%}
+          <div class="product__slides product-single__photos"
+            style="--featured-media-aspect-ratio: {{ featured_media_aspect_ratio | round: 2 }};"
+            data-product-slideshow
+            data-product-single-media-group
+            data-options='{"prevNextButtons": false, "contain": true, "adaptiveHeight": true, "fade": true}'>
+            {%- for media in product.media -%}
+              {%- render 'media', media: media, featured_media: featured_media, enable_video_looping: enable_video_looping, sectionkey: unique, image_width: image_width -%}
+            {%- endfor -%}
+          </div>
+
+          {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+          {%- if first_3d_model -%}
+            <button
+              class="btn btn--outline btn--black btn--ar product-single__view-in-space"
+              data-shopify-xr
+              data-shopify-model3d-id="{{ first_3d_model.id }}"
+              data-shopify-title="{{ product.title | strip_html }}"
+              data-shopify-xr-hidden>
+              {%- render 'icon-media-model' -%}
+
+              <span class="product-single__view-in-space-text">{{ 'products.general.view_space' | t }}</span>
+            </button>
+          {%- endif -%}
+
+          {%- if product.media.size > 1 -%}
+            <div class="product__thumbs" data-product-thumbs></div>
+          {%- endif -%}
+        {%- else -%}
+          <div class="product__slides product-single__photos product__slides--{{ image_size }}" data-product-slideshow data-product-single-media-group>
+            <div class="product__photo product__photo--blank product__slide"></div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product__content">
+        <div class="form__wrapper{% unless show_buy_buttons %} form__wrapper--no-buttons{% endunless %}{% unless current_variant.available %} variant--soldout{% endunless %}" data-form-wrapper>
+          <div class="form__width">
+            {% comment %} The input with name="id" submits to cart {% endcomment %}
+            <input type="hidden" name="id" value="{{ current_variant.id }}" form="{{ product_form_id }}">
+
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign padding_bottom = block.settings.padding_bottom
+                assign bg_accent = block.settings.bg_color
+
+                capture block_style
+                  if padding_bottom
+                    echo '--block-padding-bottom: ' | append: block.settings.padding_bottom | append: 'px;'
+                  endif
+
+                  if bg_accent
+                    if block.type == 'upsell' or block.type == 'complementary-products'
+                      unless bg_accent == 'rgba(0,0,0,0)' or bg_accent == blank
+                        echo '--bg-accent: ' | append: bg_accent | append: ';'
+                      endunless
+                    endif
+                  endif
+                endcapture
+
+                if block_style != blank
+                  assign block_style = 'style="' | append: block_style | append: '"'
+                endif
+              -%}
+
+              {%- case block.type -%}
+                {%- when '@app' -%}
+                  {%- render block -%}
+
+                {%- when 'title' -%}
+                  {%- render 'product-title' product: product, section_id: section.id, block: block, block_style: block_style, is_title_linked: is_title_linked -%}
+
+                {%- when 'price' -%}
+                  {%- render 'product-price' product: product, section_id: section.id, block: block, block_style: block_style -%}
+
+                {%- when 'variants' -%}
+                  {%- render 'product-variant-options' product: product, section_id: section.id, block: block, block_style: block_style, product_form_id: product_form_id, enable_size_chart: true -%}
+
+                {%- when 'buttons' -%}
+                  {%- render 'product-buttons' product: product, current_variant: current_variant, section_id: section.id, block: block, block_style: block_style, unique: unique, product_form_id: product_form_id -%}
+
+                {%- when 'tab_richtext' -%}
+                  {%- render 'product-description'  product: product, section_id: section.id, block: block, block_style: block_style -%}
+
+                {%- when 'inventory_countdown' -%}
+                  [% render 'partials/product-inventory' %]
+
+                {%- when 'upsell' -%}
+                  {%- assign upsell_product = product.metafields.theme.upsell.value | default: block.settings.upsell_product -%}
+
+                  <div class="product__block product__upsell" {{ block.shopify_attributes }} {{ block_style }}>
+                    {%- assign upsell_title = 'products.general.upsell_title' | t -%}
+                    {%- render 'upsell-product', upsell_product: upsell_product, upsell_title: upsell_title -%}
+                  </div>
+
+                {%- when 'pickup' -%}
+                  <div class="product__block product__pickup" data-store-availability-container="{{ current_variant.id }}" {{ block.shopify_attributes }} {{ block_style }}></div>
+
+                {%- when 'code' -%}
+                  <div class="product__block product__custom-code" {{ block_style }} {{ block.shopify_attributes }}>
+                    {{ block.settings.code }}
+                  </div>
+
+                {%- when 'siblings' -%}
+                  {%- render 'product-siblings' product: product, uniq_id: product_form_id, block: block, block_style: block_style, quick_add_product: false -%}
+
+                {%- when 'text' -%}
+                  [% render 'partials/product-block-text' %]
+
+                {%- when 'icon' -%}
+                  [% render 'partials/product-block-icon' %]
+
+                {%- when 'sharing' -%}
+                  <div class="product__block" {{ block.shopify_attributes }}>
+                    {%- assign share_url = current_variant.url | prepend: request.origin -%}
+                    {%- render 'share-button' share_url: share_url -%}
+                  </div>
+
+                {%- when 'divider' -%}
+                  {%- render 'divider' block: block, modifier: 'product__block product__block--divider' -%}
+
+                {%- when 'line-item' -%}
+                  [% render 'partials/product-properties' %]
+
+                {%- when 'features' -%}
+                  [% render 'partials/product-features' %]
+
+                {%- when 'complementary-products' -%}
+                  <div class="product__block product__complementary" {{ block.shopify_attributes }} {{ block_style }}>
+                    <complementary-products class="complementary-products"
+                      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=complementary" >
+                      {%- if recommendations.performed and recommendations.products_count > 0 -%}
+                        {%- assign complementary_products_title = 'products.general.complementary_products_title' | t -%}
+                        {%- if complementary_products_title != blank -%}
+                          <p class="complementary-products__title">{{ complementary_products_title }}</p>
+                        {%- endif -%}
+
+                        {%- for product in recommendations.products -%}
+                          {%- render 'upsell-product', upsell_product: product -%}
+                        {%- endfor -%}
+                      {%- endif -%}
+                    </complementary-products>
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% unless product == empty %}
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+  <script type="application/json" id="ModelJson-{{ unique }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{% endunless %}

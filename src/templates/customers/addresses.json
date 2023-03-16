@@ -1,0 +1,23 @@
+{
+  "name": "Addresses",
+  "sections": {
+    "main": {
+      "type": "customer-addresses",
+      "blocks": {
+        "account": {
+          "type": "account"
+        },
+        "email": {
+          "type": "email"
+        }
+      },
+      "block_order": [
+        "account",
+        "email"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

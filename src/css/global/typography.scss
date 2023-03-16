@@ -1,0 +1,312 @@
+/**
+ * Typography
+ * https://type-scale.com/
+ */
+
+:root {
+  // 1.18 base 10
+  --font-15: 55px;
+  --font-14: 52px;
+  --font-13: 50px;
+  --font-12: 47px;
+  --font-11: 43px;
+  --font-10: 40px;
+  --font-9: 37px;
+  --font-8: 32px;
+  --font-7: 27px;
+  --font-6: 23px;
+  --font-5: 19px;
+  --font-4: 16px;
+  --font-3: 14px;
+  --font-2: 12px;
+  --font-1: 10px;
+
+  @include media-query($medium) {
+    // 1.18 base 11
+    --font-15: 60px;
+    --font-14: 55px;
+    --font-13: 50px;
+    --font-12: 52px;
+    --font-11: 48px;
+    --font-10: 45px;
+    --font-9: 41px;
+    --font-8: 35px;
+    --font-7: 29px;
+    --font-6: 25px;
+    --font-5: 21px;
+    --font-4: 18px;
+    --font-3: 15px;
+    --font-2: 13px;
+    --font-1: 11px;
+  }
+
+  @include media-query($large-up) {
+    // 1.18 base 12
+    --font-15: 82px;
+    --font-14: 75px;
+    --font-13: 69px;
+    --font-12: 62px;
+    --font-11: 56px;
+    --font-10: 53px;
+    --font-9: 45px;
+    --font-8: 38px;
+    --font-7: 32px;
+    --font-6: 27px;
+    --font-5: 23px;
+    --font-4: 19px;
+    --font-3: 16px;
+    --font-2: 14px;
+    --font-1: 12px;
+  }
+}
+
+@mixin title {
+  font-family: var(--FONT-STACK-HEADING);
+  font-style: var(--FONT-STYLE-HEADING);
+  font-weight: var(--FONT-WEIGHT-HEADING);
+}
+
+@mixin body {
+  font-family: var(--FONT-STACK-BODY);
+  font-weight: var(--FONT-WEIGHT-BODY);
+  font-style: var(--FONT-STYLE-BODY);
+}
+
+@mixin nav {
+  font-family: var(--FONT-STACK-NAV);
+  font-style: var(--FONT-STYLE-NAV);
+  font-weight: var(--FONT-WEIGHT-NAV);
+}
+
+@mixin body-bold {
+  @include body;
+  font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+}
+
+@mixin title-bold {
+  @include title;
+  font-weight: var(--FONT-WEIGHT-HEADING-BOLD);
+}
+
+@mixin nav-bold {
+  @include nav;
+  font-weight: var(--FONT-WEIGHT-NAV-BOLD);
+}
+
+h1, .h1 { font-size: calc(var(--font-9) * var(--FONT-ADJUST-HEADING)); }
+h2, .h2 { font-size: calc(var(--font-8) * var(--FONT-ADJUST-HEADING)); }
+h3, .h3 { font-size: calc(var(--font-7) * var(--FONT-ADJUST-HEADING)); }
+h4, .h4 { font-size: calc(var(--font-6) * var(--FONT-ADJUST-HEADING)); }
+h5, .h5 { font-size: calc(var(--font-5) * var(--FONT-ADJUST-HEADING)); }
+h6, .h6 { font-size: calc(var(--font-4) * var(--FONT-ADJUST-HEADING)); }
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  @include title;
+  line-height: 1.2;
+  margin: 0.5em 0;
+
+  .strong,
+  &.strong,
+  strong { font-weight: var(--FONT-WEIGHT-HEADING-BOLD); }
+}
+
+/*================ Headings with body font ================*/
+@mixin body {
+  font-family: var(--FONT-STACK-BODY);
+  font-weight: var(--FONT-WEIGHT-BODY);
+  font-style: var(--FONT-STYLE-BODY);
+}
+
+@mixin heading {
+  font-family: var(--FONT-STACK-HEADING);
+  font-weight: var(--FONT-WEIGHT-HEADING);
+  font-style: var(--FONT-STYLE-HEADING);
+}
+
+body { @include body; }
+
+.h1--body,
+.h2--body,
+.h3--body,
+.h4--body,
+.h5--body,
+.h6--body {
+  @include body;
+  text-transform: none;
+  letter-spacing: 0px;
+  margin: 0.5em 0;
+  line-height: 1.2;
+
+  a {
+    text-decoration: none;
+    font-weight: inherit;
+  }
+}
+
+.h1--body { font-size: calc(var(--font-9) * var(--FONT-ADJUST-BODY)); }
+.h2--body { font-size: calc(var(--font-8) * var(--FONT-ADJUST-BODY)); }
+.h3--body { font-size: calc(var(--font-7) * var(--FONT-ADJUST-BODY)); }
+.h4--body { font-size: calc(var(--font-6) * var(--FONT-ADJUST-BODY)); }
+.h5--body { font-size: calc(var(--font-5) * var(--FONT-ADJUST-BODY)); }
+.h6--body { font-size: calc(var(--font-4) * var(--FONT-ADJUST-BODY)); }
+
+p .p { font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY)); }
+
+small,
+.small,
+p small { font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY)); }
+
+.xs { font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY)); }
+
+.font-body { @include body; }
+.font-heading { @include heading; }
+
+.heading-size-1 { font-size: calc(var(--font-1) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-2 { font-size: calc(var(--font-2) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-3 { font-size: calc(var(--font-3) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-4 { font-size: calc(var(--font-4) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-5 { font-size: calc(var(--font-5) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-6 { font-size: calc(var(--font-6) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-7 { font-size: calc(var(--font-7) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-8 { font-size: calc(var(--font-8) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-9 { font-size: calc(var(--font-9) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-10 { font-size: calc(var(--font-10) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-11 { font-size: calc(var(--font-11) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-12 { font-size: calc(var(--font-12) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-13 { font-size: calc(var(--font-13) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-14 { font-size: calc(var(--font-14) * var(--FONT-ADJUST-HEADING)); }
+.heading-size-15 { font-size: calc(var(--font-15) * var(--FONT-ADJUST-HEADING)); }
+
+.body-size-1 { font-size: calc(var(--font-1) * var(--FONT-ADJUST-BODY)); }
+.body-size-2 { font-size: calc(var(--font-2) * var(--FONT-ADJUST-BODY)); }
+.body-size-3 { font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY)); }
+.body-size-4 { font-size: calc(var(--font-4) * var(--FONT-ADJUST-BODY)); }
+.body-size-5 { font-size: calc(var(--font-5) * var(--FONT-ADJUST-BODY)); }
+.body-size-6 { font-size: calc(var(--font-6) * var(--FONT-ADJUST-BODY)); }
+.body-size-7 { font-size: calc(var(--font-7) * var(--FONT-ADJUST-BODY)); }
+.body-size-8 { font-size: calc(var(--font-8) * var(--FONT-ADJUST-BODY)); }
+.body-size-9 { font-size: calc(var(--font-9) * var(--FONT-ADJUST-BODY)); }
+.body-size-10 { font-size: calc(var(--font-10) * var(--FONT-ADJUST-BODY)); }
+.body-size-11 { font-size: calc(var(--font-11) * var(--FONT-ADJUST-BODY)); }
+.body-size-12 { font-size: calc(var(--font-12) * var(--FONT-ADJUST-BODY)); }
+.body-size-13 { font-size: calc(var(--font-13) * var(--FONT-ADJUST-BODY)); }
+.body-size-14 { font-size: calc(var(--font-14) * var(--FONT-ADJUST-BODY)); }
+.body-size-15 { font-size: calc(var(--font-15) * var(--FONT-ADJUST-BODY)); }
+
+/*================ Standard elements ================*/
+
+p,
+.p { margin: 0.5em 0; }
+
+.strong,
+strong { font-weight: var(--FONT-WEIGHT-BODY-BOLD); }
+
+a {
+  text-decoration: none;
+  color: var(--link);
+  transition: color 0.25s ease;
+}
+
+@media (hover: hover) {
+  a:hover { color: var(--link-hover); }
+}
+
+blockquote {
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  padding-left: 1.5em;
+  border-left: 5px solid var(--text);
+  margin: 0 0 1.5em 1.25em;
+}
+
+ul,
+ol {
+  font-size: calc(var(--font-3) * var(--FONT-ADJUST-BODY));
+  margin: 0 0 1.5em 1.3em;
+
+  &.unstyled {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  &.inline-list li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+li { margin: 0 0 0.25em 0; }
+
+hr,
+.hr {
+  clear: both;
+  border-top: solid var(--COLOR-BORDER);
+  border-width: 1px 0 0;
+  margin: rem(20px) 0;
+  height: 0;
+
+  &.hr--small { margin: rem(10px) 0; }
+
+  &.hr--tall { margin: rem(40px) 0; }
+
+  &.hr--clear { border-top-color: transparent; }
+
+  &.hr--dash {
+    margin: var(--gutter) auto;
+    width: 40px;
+  }
+
+  &.hr--thick { border-width: 2px 0 0; }
+
+  &.hr--underline {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &.hr--no-margin { margin: 0; }
+
+  &.hr--color { border-top-color: var(--text-a35); }
+}
+
+.page__heading {
+  text-align: center;
+  position: relative;
+  z-index: 11;
+}
+
+@mixin caps {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: var(--FONT-STACK-BODY);
+  font-weight: var(--FONT-WEIGHT-BODY);
+  font-size: calc(11px * var(--FONT-ADJUST-BODY));
+}
+
+.caps {
+  @include caps;
+}
+
+@mixin caps-link {
+  text-transform: var(--BTN-UPPERCASE);
+  font-family: var(--BTN-FONT-STACK);
+  font-size: var(--BTN-FONT-SIZE);
+  font-style: var(--BTN-FONT-STYLE);
+  font-weight: var(--BTN-FONT-WEIGHT);
+  letter-spacing: var(--BTN-LETTER-SPACING);
+
+  span { @include animate-underline-from-center-on-hover; }
+
+  @media (hover: hover) {
+    .icon-arrow-right {
+      transition: transform 0.5s ease;
+      transform: translateZ(0);
+    }
+    &:hover .icon-arrow-right { transform: translate3d(5px, 0, 0); }
+  }
+}
+
+.caps--link {
+  @include caps-link;
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -1,0 +1,14 @@
+.contact__form__heading {
+  font-size: calc(var(--font-5) * var(--FONT-ADJUST-HEADING));
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: var(--inner);
+  text-align: center;
+}
+
+.contact-form {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.contact-form .custom-form__block { margin-bottom: 20px; }

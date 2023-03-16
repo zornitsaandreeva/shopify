@@ -1,0 +1,169 @@
+<!-- /sections/section-blog.liquid -->
+{%- liquid
+  assign blog = blogs[section.settings.blog_name]
+  assign blog_title = section.settings.title
+  assign bg_color = section.settings.bg_color
+  assign text_color = section.settings.color
+  assign articles_per_row = section.settings.grid
+-%}
+
+{%- style -%}
+  #Blog--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+
+    {%- unless bg_color == 'rgba(0,0,0,0)' or bg_color == blank -%}
+      --bg: {{ bg_color }};
+    {%- endunless -%}
+
+    {%- unless text_color == 'rgba(0,0,0,0)' or text_color == blank -%}
+      --text: {{ text_color }};
+      --text-light: {{ text_color | color_mix: settings.bg_color, 70 }};
+    {%- endunless -%}
+  }
+{%- endstyle -%}
+
+<section id="Blog--{{ section.id }}"
+  class="blog-section section-padding"
+  data-section-id="{{ section.id }}"
+  data-section-type="blog"
+  style="--grid: repeat({{ articles_per_row }}, minmax(0, 1fr));">
+  {% if blog_title != blank %}
+    <h2 class="page__heading blog__title h5"><a href="{{ blog.url | default: '#' }}">{{ blog_title }}</a></h2>
+  {% endif %}
+
+  [% render 'partials/blog-posts' %]
+</section>
+
+{% schema %}
+  {
+    "name": "Blog posts",
+    "settings": [
+      {
+        "type": "blog",
+        "id": "blog_name",
+        "label": "Blog"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Blog posts"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type":    "range",
+        "id":      "grid",
+        "min":     1,
+        "max":     4,
+        "step":    1,
+        "label":   "Articles per row",
+        "default": 4
+      },
+      {
+        "type":    "range",
+        "id":      "rows",
+        "min":     1,
+        "max":     5,
+        "step":    1,
+        "label":   "Number of rows",
+        "default": 1
+      },
+      {
+        "type": "header",
+        "content": "Articles"
+      },
+      {
+        "type": "range",
+        "id": "aspect_ratio",
+        "min": 0.5,
+        "max": 1.5,
+        "step": 0.1,
+        "unit": ":1",
+        "label": "Article image aspect ratio",
+        "info": "Wide to tall",
+        "default": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tags",
+        "label": "Show tags",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show date",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show 'Read more' button",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_comments",
+        "label": "Show comment count",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog posts",
+        "category": "Text"
+      }
+    ],
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    }
+  }
+{% endschema %}
