@@ -1,0 +1,94 @@
+<script>
+  console.log({{ collection | json }});
+  console.log({{ product | json }});
+</script>
+
+<section class="section-product">
+  <div class="wrapper">
+    <div class="section-product__body">
+      {%- if product.featured_image != blank -%}
+        <div class="section-product__image">
+          {%- render 'image', image: product.featured_image -%}
+        </div>
+      {%- endif -%}
+
+      <div class="section-product__content">
+        <header class="section-product__head">
+          <nav class="breadcrumb">
+            <a href="/" class="breadcrumbs__item">{{ 'general.breadcrumbs.home' | t }}
+            </a>
+            {%- if collection != blank -%}
+              <a href="{{ collection.url }}" class="breadcrumbs__item">{{ collection.title }}
+              </a>
+            {%- endif -%}
+            <span class="breadcrumbs__item">{{ product.title }}
+            </span>
+          </nav>
+
+          <h1 class="section-product__heading">{{ product.title }}
+          </h1>
+          <div class="section-product__stars">
+            {% render 'product-rating', product: product %}
+            {% render 'product-price' %}
+          </div>
+
+          {%- if settings.sale_badge -%}
+            <span data-price-off class="product__price--off">
+              <span data-price-off-amount></span>
+              {{ 'products.product.off' | t }}
+            </span>
+          {%- endif -%}
+        </div>
+
+
+      </header>
+
+      <div class="section-product__body">
+        {%- form 'product', product -%}
+          <select name="id">
+            {%- for variant in product.variants -%}
+              <option value="{{ variant.id }}">{{ variant.title }}
+              </option>
+            {%- endfor -%}
+          </select>
+
+          <div class="buttons">
+            <div class="quantity-selector" data-quantity-holder>
+              <label for="product-quantity-buttons-{{ section_id }}" class="label-hidden">{{ 'products.product.quantity' | t }}
+              </label>
+
+              <button type="button" class="quantity__minus" data-quantity-minus data-quantity-button tabindex="0" title="{{ 'cart.general.decrease_quantity_label' | t }} - {{ product.title | strip_html }}">{%- render 'icon-minus' -%}
+              </button>
+
+              <input id="product-quantity-buttons-{{ section_id }}" data-popout-input type="number" class="quantity__input" value="1" min="1" aria-label="quantity" autocomplete="off" name="quantity" data-quantity-field title="{{ 'cart.general.quantity_field_label' | t }} - {{ product.title | strip_html }}" pattern="[0-9]*"/>
+
+              <button type="button" class="quantity__plus" data-quantity-plus data-quantity-button tabindex="0" title="{{ 'cart.general.increase_quantity_label' | t }} - {{ product.title | strip_html }}">{% render 'icon-plus' %}
+              </button>
+            </div>
+
+            <button type="submit">{{ 'products.product.add_to_cart' | t }}
+            </button>
+
+            <div class="product__submit__item">
+              {{ form | payment_button }}
+            </div>
+
+            <span>{{ 'products.general.description' | t }}
+            </span>
+
+          </div>
+
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div></section>{% schema %}
+{
+  "name": "Product test",
+  "settings": []
+}
+{% endschema %}{% stylesheet %}
+.heading {
+  font-size: 32px;
+}
+{% endstylesheet %}{% javascript %}}
