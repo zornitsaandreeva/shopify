@@ -1,0 +1,125 @@
+<section class="accordion-group-test">
+  <div class="accordion__body">
+    <div class="{{ section.settings.width }}">
+    </div>
+  </div>   
+</section>
+
+{% schema %}
+  {
+    "name": "Accordion group test",
+    "settings": [
+      {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper", "label": "Normal"},
+        {"value": "wrapper--narrow", "label": "Narrow"}
+      ]
+      },
+      {
+      "type": "header",
+      "content": "Colors"
+      },
+      {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    }
+    ],
+    "blocks": [
+    {
+      "type": "@app"
+    },
+     {
+      "name": "Heading",
+      "type": "image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "FAQ"
+        }
+        
+      ]
+    },
+    {
+      "name": "Question",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Frequently asked question"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Answer",
+          "default": "<p>Share details about your shipping policies, item returns, or customer service.</p>"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+      "name": "Accordion group test",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

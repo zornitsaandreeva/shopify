@@ -1,0 +1,83 @@
+<section class="section-custom-content-test">
+  <div class="wrapper">
+    <header class="section-custom-content__head">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+    </header>
+    
+    <div class="section-custom-content__body">
+      {%- for block in section.blocks -%}
+        <div class="item">
+          {%- if block.settings.image != blank -%}
+            <div class="item__image">
+              {%- render 'image', image: block.settings.image -%}
+            </div>
+          {%- endif -%}
+        
+          {%- if block.settings.title != blank -%}
+            <h2 class="item__heading">{{ block.settings.title }}</h2>
+          {%- endif -%}
+        
+          {%- if block.settings.text != blank -%}
+            <div class="item__rich-text rich-text">{{ block.settings.text }}</div>
+          {%- endif -%}
+        
+          {%- if block.settings.button_text != blank and block.settings.button_url != blank -%}
+            <div class="item__button">
+              <a href="{{ block.settings.button_url }}" class="button">{{ block.settings.button_text }}</a>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom content test",
+    "blocks": [
+      {
+        "type": "image_picker",
+        "name": "Image",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+      "name": "Custom content test"
+      }
+    ]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

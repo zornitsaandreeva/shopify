@@ -1,0 +1,53 @@
+<section class="section-image-with-text-test">
+    <div class="wrapper">
+      <div class="section-image-with-text-test__body">
+        <div class="section-image-with-text-test__image">
+          {%- if section.settings.image != blank -%}
+            {% render 'image', image: section.settings.image %}
+          {%- endif -%}
+        </div>
+        
+        <div class="section-image-with-text-test__content">
+          {%- if section.settings.heading != blank -%}
+            <h1 class="heading">{{ section.settings.heading }}</h1>
+          {%- endif -%}
+          
+          {%- if section.settings.text != blank -%}
+            <div class="text-content">{{ section.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+    {
+      "name": "Image with text test",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description"
+        }
+      ],
+      "presets": [
+        {
+        "name": "Image with text test"
+        }
+      ]
+    }
+  {% endschema %}
+  {% stylesheet %}
+  {% endstylesheet %}
+  {% javascript %}
+  {% endjavascript %}

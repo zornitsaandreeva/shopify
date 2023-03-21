@@ -1,0 +1,182 @@
+<section class="section-collection-list-test">
+  <div class="wrapper">
+    <header class="section-collection-list-test__head">
+      {%- if section.settings.heading != blank -%}
+      <h1 class="heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+      <p class="description">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </header>
+    <div class="section-collection-list-test__body">
+      {%- for block in section.blocks -%}
+      <div class="collection">
+        {%- if block.settings.collection != blank -%}
+            <div class="item__image">
+              {%- render 'collection', collection: block.settings.collection -%}
+            </div>
+          {%- endif -%}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Section collection list t",
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "Collection list"
+},
+{
+"type": "text",
+"id": "text",
+"label": "Description"
+},
+{
+"type": "select",
+"id": "layout",
+"label": "Layout",
+"options": [
+{
+"value": "grid",
+"label": "Grid"
+},
+{
+"value": "slider",
+"label": "Slider"
+}
+],
+"default": "grid"
+},
+{
+"type": "range",
+"id": "aspect_ratio",
+"min": 0.5,
+"max": 1.5,
+"step": 0.1,
+"unit": ":1",
+"label": "Photo aspect ratio",
+"info": "Wide to tall",
+"default": 1
+},
+{
+"type": "header",
+"content": "Grid",
+"info": "Applies only when layout is set to Grid"
+},
+{
+"type": "range",
+"id": "grid",
+"label": "Collections per row",
+"min": 2,
+"max": 6,
+"step": 1,
+"default": 4
+},
+{
+"type": "header",
+"content": "Mobile"
+},
+{
+"type": "checkbox",
+"id": "enable_slider",
+"label": "Enable slider",
+"default": true,
+"info": "Horizontal slider in mobile layout."
+},
+{
+"type": "header",
+"content": "Colors"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background"
+},
+{
+"type": "color",
+"id": "color",
+"label": "Text"
+},
+{
+"type": "header",
+"content": "Section padding"
+},
+{
+"type": "range",
+"id": "padding_top",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "px",
+"label": "Padding top",
+"default": 32
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "px",
+"label": "Padding bottom",
+"default": 32
+}
+],
+"blocks": [
+{
+  "type": "collection",
+  "name": "Collection",
+  "limit": 12,
+  "settings": [
+    {
+      "label": "Collection",
+      "id": "collection",
+      "type": "collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_image",
+      "label": "Image"
+    },
+    {
+      "label": "Heading",
+      "id": "title",
+      "type": "text"
+    }
+  ]
+}
+],
+"presets": [
+{
+  "category": "Collection",
+  "name": "Section collection list t",
+  "blocks": [
+    {
+      "type": "collection"
+    },
+    {
+      "type": "collection"
+    },
+    {
+      "type": "collection"
+    },
+    {
+      "type": "collection"
+    }
+  ]
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

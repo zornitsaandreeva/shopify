@@ -1,14 +1,14 @@
 {%- liquid
-     assign section_width = section.settings.width
-     assign border_color = section.settings.border_color
-     assign bg_color = section.settings.bg_color
-   -%}
+      assign section_width = section.settings.width
+      assign border_color = section.settings.border_color
+      assign bg_color = section.settings.bg_color
+    -%}
 
 {%- capture style -%}
   --PT:
   {{ section.settings.padding_top | append: 'px' }}
   ;
-      --PB:{{ section.settings.padding_bottom | append: 'px' }}
+        --PB:{{ section.settings.padding_bottom | append: 'px' }}
   ;
 
   {%- unless border_color == 'rgba(0,0,0,0)' or border_color == blank -%}

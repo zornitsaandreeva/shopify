@@ -1,0 +1,43 @@
+{% schema %}
+  {
+    "name": "Slideshow Test",
+    "tag": "section",
+    "class": "slideshow",
+    "max_blocks": 5,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Slideshow Test"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slideshow Test",
+        "settings": {
+          "title": "Slideshow"
+        },
+        "blocks": [
+          {
+            "type": "slide"
+          }, {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}}

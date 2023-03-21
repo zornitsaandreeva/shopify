@@ -1,0 +1,77 @@
+{%- capture cart_icon -%}
+  {%- case section.settings.cart_icon_family -%}
+    {%- when 'bag' -%}
+      {%- render 'icon-bag' -%}
+
+    {%- when 'cart' -%}
+      {%- render 'icon-cart' -%}
+  
+  {%- endcase -%} {%- endcapture -%}
+
+
+<section class="section-header">
+  <div class="wrapper">
+    <div class="announcement-bar">
+      <div class="announcement-bar__text">
+        {%- if section.settings.text != blank -%}
+          <p class="rich-text">{{ section.settings.text }}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="header">
+      <div class="navigation">
+        {%- if section.settings.profile_icon_family -%}
+        <a href="/profile" class="profile__icon">
+          {{ profile_icon }}
+        {%- render 'icon-profile-circled' -%}
+        {%- endif -%}
+        <ul>
+          <li>
+            <a href="/cart" class="cart__icon">
+              {{ cart_icon }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Header test",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Announcement bar"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "select",
+        "id": "cart_icon_family",
+        "label": "Cart icon",
+        "default": "bag",
+        "options": [
+          { "value": "bag", "label": "Bag"},
+          { "value": "cart", "label": "Cart"}
+        ]
+      }
+      
+    ],
+    "presets": [
+      {
+      "name": "Header test"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
